@@ -1,0 +1,170 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Ex13 {
+public static void main (String[] args) {
+		// : Nom, Cognoms, any de naixement, nota mitja del cicle
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Introduce tu nombre");
+			String nom = buffer.readLine();
+			
+			System.out.println("Introduce tus apellidos");
+			String ape = buffer.readLine();
+			
+			System.out.println("Introduce tu año de nacimiento");
+			String anyStr = buffer.readLine();
+			int any = Integer.parseInt(anyStr);
+			
+			System.out.println("Introduce la nota media del ciclo");
+			String notaStr = buffer.readLine();
+			int nota = Integer.parseInt(notaStr); //si quisieramos notas con decimales, deberíamos usar un double
+			
+			// SI QUIERO QUE EL MENÚ APAREZCA CADA VEZ, HACER EL MENÚ DENTRO DEL BUCLE. En este caso, he creído que era demasiado engorroso
+			// al ser un programa pequeño y prefería mostrar únicamente
+			System.out.println();
+			System.out.println("-----------Pulsa el número que precede al texto para ejecutar esa acción--------------");
+			System.out.println("1. Muestra tu nombre completo");
+			System.out.println("2. Mostrar tu edad y determinar si eres mayor");
+			System.out.println("3. Nota media del ciclo y tu calificación");
+			System.out.println("4. Introduce la nota de otros dos compañeros para calcular la media de los tres y el orden");
+			System.out.println("5. Calcular cuantos caracteres tiene tu nombre, mostrar la inicial del nombre y del apellido");
+			System.out.println("6. Escribe el nombre y apellidos de otros dos compañeros, se comprobará si son iguales y los ordenaremos alfabéticamente");
+			System.out.println("7. Salir del programa");
+			System.out.println("--------------------------------------------------------------------------------------");
+			System.out.println();
+			
+			System.out.println("Ahora, introduce el número de la acción que quieres ejecutar");
+			String accStr = buffer.readLine();
+			int acc = Integer.parseInt(accStr);
+		
+			while (acc!=7) {
+			
+			if (acc==1) { //también podríamos hacerlo con concat
+				System.out.println("Tu nombre completo es " + nom + " " + ape);
+			}
+			
+			if (acc==2) { // la forma correcta de hacer esto sería con un get.data year cuando sepamos usarlo
+				if (any<=1998) System.out.println("Tienes " + (2016-any) + " años y eres mayor de edad");
+				else System.out.println("Tienes " + (2016-any) + " años y eres un pipiolo");
+			}
+			
+			if (acc==3) {
+				if (nota<5) System.out.println("Tu nota media es de " + nota + ". Suspendido");
+				else if (nota>=5 && nota<6) System.out.println("Tu nota media es de " + nota + ". Suficiente");
+				else if (nota>=6 && nota<7) System.out.println("Tu nota media es de " + nota + ". Bien");
+				else if (nota>=7 && nota<9) System.out.println("Tu nota media es de " + nota + ". Notable");
+				//if (nota>=9) System.out.println("Tu nota media es de " + nota + ". Excelente");
+				else System.out.println("Tu nota media es de " + nota + ". Excelente");
+			}
+			
+			if (acc==4) {
+				System.out.println("Introduce la nota media de un compañero");
+				String nota1Str = buffer.readLine();
+				int nota1 = Integer.parseInt(nota1Str);
+				
+				System.out.println("Ahora la de otro");
+				String nota2Str = buffer.readLine();
+				int nota2 = Integer.parseInt(nota2Str);
+				
+				System.out.println("La nota media de los tres es de " + ((nota+nota1+nota2)/3));
+				
+				if(nota > nota1){
+			           if(nota>nota2) System.out.println("La mayor nota es: " + nota);
+			           else System.out.println("La mayor nota es: " + nota2);
+				}
+			    else if(nota1>nota2) System.out.println("La mayor nota es: " + nota1);
+			    else System.out.println("La mayor nota es: " + nota2);
+				
+				if(nota < nota1){
+			           if(nota<nota2) System.out.println("La menor nota es: " + nota);
+			           else System.out.println("La menor nota es: " + nota2);
+				}
+			    else if(nota1<nota2) System.out.println("La menor nota es: " + nota1);
+			    else System.out.println("La menor nota es: " + nota2);
+			}
+			
+			if (acc==5) {
+				int var1 = nom.length();
+				char var2 = nom.charAt(0);
+				char var3 = ape.charAt(0);
+				System.out.println(nom + " tiene una longitud de caracteres de " + var1 + ". La inicial de tu nombre es " + var2 + " y la de tu apellido " + var3);
+			}
+			
+			if  (acc==6) {
+				System.out.println("Introduce el nombre de un compañero");
+				String nom1 = buffer.readLine();
+				
+				System.out.println("Ahora sus apellidos");
+				String ape1 = buffer.readLine();
+				
+				System.out.println("Introduce el nombre de otro compañero");
+				String nom2 = buffer.readLine();
+				
+				System.out.println("Ahora sus apellidos");
+				String ape2 = buffer.readLine();
+				
+				//if (nom.equals(nom1) || nom.equals(nom2) || nom1.equals(nom2)) System.out.println("Un nombre se repite");
+				//else System.out.println("Ningún nombre se repite");
+				
+				/*if (nom.compareTo(nom1) == 0) {
+					if (nom.compareTo(nom2) == 0) System.out.println("Los tres nombres son iguales"); // 0=1=2
+					else if (nom.compareTo(nom2) < 0) System.out.println(nom + " y " + nom1 + " son iguales, por tanto el orden es " + nom + ", " + nom1 + ", " + nom2); // 0=1+2
+					else System.out.println(nom + " y " + nom1 + " son iguales, por tanto el orden es " + nom2 + ", " + nom1 + ", " + nom); // 2+0=1
+				}
+				
+				if (nom.compareTo(nom1) < 0) {
+					if (nom.compareTo(nom2) < 0 && nom1.compareTo(nom2) < 0) System.out.println("El orden es " + nom + ", " + nom1 + ", " + nom2); // 0+1+2
+					else if (nom.compareTo(nom2) > 0) System.out.println("El orden es " + nom2 + ", " + nom + ", " + nom1); // 2+0+1
+					else System.out.println("El orden es " + nom + ", " + nom2 + ", " + nom1); // 0+2+1
+				}
+				
+				*/
+				if (nom.equals(nom1) || nom.equals(nom2) || nom1.equals(nom2)) System.out.println("Un nombre se repite");
+				
+				//Array de String
+		        String[] nombres = {nom, nom1, nom2};
+		 
+		        //Ordena el array
+		        Arrays.sort(nombres);
+		 
+		        //Mostramos el array ya ordenado
+		        for (String i : nombres) {
+		            System.out.print(i + ", ");
+		        }
+		        
+		        System.out.println();
+		        
+		    	//Array de String
+		        String[] apellidos = {ape, ape1, ape2};
+		 
+		        //Ordena el array
+		        Arrays.sort(apellidos,String.CASE_INSENSITIVE_ORDER);
+		 
+		        //Mostramos el array ya ordenado
+		        for (String i : apellidos) {
+		            System.out.print(i + ", ");
+		        }
+			}
+			
+			if  (acc==7) break;
+			
+			if (acc>=8) System.out.println("Error, no es un número valido. 1 al 7");
+			
+			System.out.println();
+			System.out.println("Ahora, introduce otro número de la acción que quieres ejecutar");
+			accStr = buffer.readLine();
+			acc = Integer.parseInt(accStr);
+			
+			}
+			
+			System.out.println("Hasta otra");
+	
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		}

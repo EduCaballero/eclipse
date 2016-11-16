@@ -1,0 +1,69 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Prueba2 {
+public static void main (String[] args) {
+		
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Introduce tu NIF");
+			String nifStr = buffer.readLine();
+			//System.out.println("El tamaño de " + nifStr + " es de " + nifStr.length() + " caracteres");
+			
+			// Y la expresión regular para aceptar DNI españoles es esta:
+			
+			// if 
+
+			// (\d{8})([-]?)([A-Z]{1})
+			int cont = 0;
+			
+			while (cont!=8) {
+			while (nifStr.length()!=9 || !Character.isLetter(nifStr.charAt(8)) ) {
+				System.out.println("Error. Introduce tu NIF");
+				nifStr = buffer.readLine();
+			}
+								
+				
+				/*while (!Character.isLetter(nifStr.charAt(8))) {	
+					
+					System.out.println("Introduce tu NIF");
+					nifStr = buffer.readLine();
+					
+				}*/
+				
+					for (int i = 0; i < 8; i++) {
+						if (!Character.isDigit(nifStr.charAt(i))) {
+						cont=0;
+						}
+						if (Character.isDigit(nifStr.charAt(i))) {
+						cont++;
+						}
+						
+						
+					//if (nifStr.charAt(i)>=0 && nifStr.charAt(i)<=9);
+				}					
+					nifStr="";	
+			}
+						
+			System.out.println("Correcto, la parte numérica de tu NIF es: " + nifStr.substring(0,8));
+				
+			
+		
+			
+	
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		} // i>=0 && <=9
+
+/*
+Usar el método length() de java.lang.String para conocer el número de caracteres de una cadena de texto.
+
+Usar el método estático isLetter(char c) de java.lang.Character para comprobar que un carácter es una letra.
+
+Usar el método estático isDigit(char c) de java.lang.Character para comprobar que un carácter es un dígito.
+
+Usar el método substring(int inicio, int fin) de java.lang.String para obtener la parte numérica del nif */

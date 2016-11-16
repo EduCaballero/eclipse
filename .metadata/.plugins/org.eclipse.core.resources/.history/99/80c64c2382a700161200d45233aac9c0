@@ -1,0 +1,50 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Ex13 {
+public static void main (String[] args) {
+		// : Nom, Cognoms, any de naixement, nota mitja del cicle
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Introduce tu nombre");
+			String nom = buffer.readLine();
+			
+			System.out.println("Introduce tus apellidos");
+			String ape = buffer.readLine();
+			
+			System.out.println("Introduce tu año de nacimiento");
+			String anyStr = buffer.readLine();
+			int any = Integer.parseInt(anyStr);
+			
+			System.out.println("Introduce tu nota media");
+			String notaStr = buffer.readLine();
+			int nota = Integer.parseInt(notaStr);
+			
+			int edad = 2016 - any;
+			
+			System.out.println("Hola " + nom +"" + ape);
+			if (any<1998) System.out.println("Tienes " + edad + " años y eres menor de edad");
+			else System.out.println("Tienes " + edad + " años y eres mayor de edad");
+			
+			
+			/*1. Nom i cognoms complerts.
+			2. Edat, i dir si és major d’edat o no.
+			3. Informar de la nota mitja del cicle i dir si està suspès, suficient, bé, notable o excel·lent.
+			4. Demanar la nota de dos companys més del cicle, i dir quina és la nota mitja de tots tres,
+			quina és la nota més alta i quina és la nota més baixa.
+			5. A partir del nom de l’usuari demanat per teclat, mostrar la següent informació: Nombre de
+			caràcters que té el nom, mostrar la inicial del nom, i mostrar la inicial del cognom.
+			6. Demanar el nom i el cognom de dos companys del cicle (per separat), i informar si hi ha
+			algun nom igual, i ordenar alfabèticament, primer els noms, i després els cognoms.
+			7. Sortir del programa.*/	
+			
+		
+			
+	
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		}

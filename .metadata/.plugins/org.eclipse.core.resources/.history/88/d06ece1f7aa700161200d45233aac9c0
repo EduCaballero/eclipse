@@ -1,0 +1,42 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Prueba2 {
+public static void main (String[] args) {
+		
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Introduce tu NIF");
+			String nifStr = buffer.readLine();
+			
+			int cont = 0;
+			
+			while (cont!=8) {
+			while (nifStr.length()!=9 || !Character.isLetter(nifStr.charAt(8)) ) {
+				System.out.println("Error. Introduce tu NIF");
+				nifStr = buffer.readLine();
+			}								
+	
+					for (int i = 0; i < 8; i++) {
+						
+						if (Character.isDigit(nifStr.charAt(i))) {
+						cont++;
+						}						
+					
+				}					
+					if (cont!= 8) nifStr="";	
+			}
+						
+			System.out.println("Correcto, la parte numérica de tu NIF es: " + nifStr.substring(0,8));
+				
+			
+		
+			
+	
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		} 

@@ -1,0 +1,26 @@
+import java.io.*;
+
+public class Ex14 {
+	
+	public static void main (String[] args) {
+ 
+		try{
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Introduce el mes");
+			String mesStr = buffer.readLine();
+			int mes = Integer.parseInt(mesStr); 
+			System.out.println("Introduce el año");
+			String anyStr = buffer.readLine();
+			int any = Integer.parseInt(anyStr);
+			
+			if (mes == 4 || mes == 6 || mes == 9 || mes == 11) System.out.println("Me has dicho un mes de 30 días");
+			else if (mes!=2) System.out.println("Me has dicho un mes de 31 días");
+			else if (mes==2 && (any%4 == 0 && (any%100 != 0 || any%400 == 0))) System.out.println("Me has dicho un mes de 29 días");
+			else System.out.println("Me has dicho un mes de 28 días");
+		}
+		
+		catch (Exception e) {
+			System.out.println("El número introducido es incorrecto");
+		}
+	}
+}

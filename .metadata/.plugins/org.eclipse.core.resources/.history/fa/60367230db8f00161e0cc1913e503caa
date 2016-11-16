@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class PracticaMonedas {
+	
+	public static void main(String[] args) {
+
+		try{
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in)); //siempre igual
+			System.out.println("Escribe el valor del importe");
+			String num1Str = buffer.readLine(); // con esto captamos lo que escribimos con el teclado
+			int num1 = Integer.parseInt(num1Str);
+			System.out.println("Ahora te calcularé el cambio para " + num1 + "!");
+			
+				System.out.println("Serían " + (num1/50) + " monedas de 50cts");
+				num1%=50;
+				System.out.println("Serían " + (num1/20) + " monedas de 20cts");
+				num1%=20;
+				System.out.println("Serían " + (num1/10) + " monedas de 10cts");
+				num1%=10;
+				System.out.println("Serían " + (num1/5) + " monedas de 10cts");
+				num1%=5;
+				System.out.println("Serían " + (num1/2) + " monedas de 10cts");
+				num1%=2;
+				System.out.println("Serían " + (num1/1) + " monedas de 10cts");
+				
+					
+		}
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números");
+		}
+		
+	}
+
+}

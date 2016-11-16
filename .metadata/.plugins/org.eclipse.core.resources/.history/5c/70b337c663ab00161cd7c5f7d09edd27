@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class ExMonos {
+	public static void main (String[] args) {
+		
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			
+			System.out.println();
+			System.out.println("-----------MENÚ PRINCIPAL--------------");
+			System.out.println("[1] - REGISTRAR INGRESOS");
+			System.out.println("[2] - ESTADÍSTICAS");
+			System.out.println("[3] - REINICIAR");
+			System.out.println("[0] - SALIR");
+			System.out.println("--------------------------------------------------------------------------------------");
+			System.out.println();
+
+	
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		}

@@ -1,0 +1,3 @@
+http://beginnersbook.com/2014/01/java-program-to-reverse-a-number/
+
+http://stackoverflow.com/questions/26649619/trying-to-display-a-sequence-of-numbers-beginning-from-1-using-loops

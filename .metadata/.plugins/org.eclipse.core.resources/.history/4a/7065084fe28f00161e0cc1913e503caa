@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class PiedraPapelTijeras {
+	
+	public static void main (String[] args) {
+		 
+		try{
+			System.out.println("Vamos a jugar a piedra, papel o tijeras");
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			System.out.println("Primer jugador; introduce piedra, papel o tijeras");
+			String primer1Str = buffer.readLine();
+			
+			System.out.println("Ahora el segundo jugador; introduce piedra, papel o tijeras");
+			String segundo1Str = buffer.readLine();
+			
+			if (primer1Str.equals("piedra") && segundo1Str.equals("papel")) {
+				System.out.println("Gana el segundo jugador");
+				
+			}
+			
+
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números");
+		}
+		
+	}
+	
+}

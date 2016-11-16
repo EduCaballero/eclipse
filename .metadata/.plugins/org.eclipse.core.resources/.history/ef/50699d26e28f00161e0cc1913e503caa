@@ -1,0 +1,53 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class PiedraPapelTijeras {
+	
+	public static void main (String[] args) {
+		 
+		try{
+			System.out.println("Vamos a jugar a piedra, papel o tijeras");
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Primer jugador; introduce piedra, papel o tijeras");
+			String primer1Str = buffer.readLine();
+			int primer1 = Integer.parseInt(primer1Str);
+			
+			System.out.println("Primer jugador; introduce piedra, papel o tijeras");
+			String primer2Str = buffer.readLine();
+			int primer2 = Integer.parseInt(primer2Str);
+			
+			System.out.println("Primer jugador; introduce piedra, papel o tijeras");
+			String primer3Str = buffer.readLine();
+			int primer3 = Integer.parseInt(primer3Str);
+			
+			System.out.println("Ahora el segundo jugador; introduce piedra, papel o tijeras");
+			String segundo1Str = buffer.readLine();
+			int segundo1 = Integer.parseInt(segundo1Str);
+			
+			System.out.println("Segundo jugador; introduce piedra, papel o tijeras");
+			String segundo2Str = buffer.readLine();
+			int segundo2 = Integer.parseInt(segundo2Str);
+			
+			System.out.println("Segundo jugador; introduce piedra, papel o tijeras");
+			String segundo3Str = buffer.readLine();
+			int segundo3 = Integer.parseInt(segundo3Str);
+			
+			int jugador1 = 0;
+			int jugador2 = 0;
+			int piedra;
+			int papel;
+			int tijera;
+			
+			if (primer1 .equals (piedra)) {
+				
+			}
+			
+
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números");
+		}
+		
+	}
+	
+}

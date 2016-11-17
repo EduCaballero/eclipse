@@ -1,0 +1,66 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class ExMonos {
+	public static void main (String[] args) {
+		
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			String accStr="";
+			int acc=1;
+			double pesogorilamax = 0;
+			double pesochimpmax = 0;
+			int edadgorilamax = 0;
+			int edadchimpmax = 0;
+			String acc1Str ="";
+			int acc1 = 0;
+			String ingStr = "";
+			int ing = 0;
+			
+			while (acc!=0) {
+			
+			System.out.println();
+			System.out.println("-----------MENÚ PRINCIPAL--------------");
+			System.out.println("[1] - REGISTRAR INGRESOS");
+			System.out.println("[2] - ESTADÍSTICAS");
+			System.out.println("[3] - REINICIAR");
+			System.out.println("[0] - SALIR");
+			System.out.println("---------------------------------------");
+			System.out.println();
+			System.out.println("ELIJA OPCIÓN:");
+			accStr = buffer.readLine();
+			acc = Integer.parseInt(accStr);
+
+			if (acc==1) {
+				
+				System.out.println("INTRODUZCA CUÁNTOS INGRESOS QUIERE REALIZAR:");
+				String ingStr = buffer.readLine();
+				int ing = Integer.parseInt(ingStr);
+				
+				System.out.println("ELIJA TIPO DE MONO. [1] CHIMPANCÉ - [2] GORILA");
+				acc1Str = buffer.readLine();
+				acc1 = Integer.parseInt(acc1Str);
+				
+				while (acc1!=1 || acc1!=2) {
+					System.out.println("ERROR. ELIJA TIPO DE MONO. [1] CHIMPANCÉ - [2] GORILA");
+					acc1Str = buffer.readLine();
+					acc1 = Integer.parseInt(acc1Str);
+				}
+				if (acc1==1)
+				
+				if (acc1==2)
+					
+			
+				
+			}
+			
+			}
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		}

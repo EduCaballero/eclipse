@@ -74,8 +74,6 @@ public class ExMonos {
 						edadchimpmaxStr = buffer.readLine();
 						edadchimpmax = Integer.parseInt(edadchimpmaxStr);
 					}
-					
-					
 				}
 				
 				if (acc2==2) {

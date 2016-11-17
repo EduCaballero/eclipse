@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class ExMonos {
+	public static void main (String[] args) {
+		
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			int acc=1;
+			
+			while (acc!=0) {
+			
+			System.out.println();
+			System.out.println("-----------MENÚ PRINCIPAL--------------");
+			System.out.println("[1] - REGISTRAR INGRESOS");
+			System.out.println("[2] - ESTADÍSTICAS");
+			System.out.println("[3] - REINICIAR");
+			System.out.println("[0] - SALIR");
+			System.out.println("---------------------------------------");
+			System.out.println();
+			System.out.println("ELIJA OPCIÓN:");
+
+			if (acc==1) {
+				int 
+				System.out.println("INTRODUZCA CUÁNTOS INGRESOS QUIERE REALIZAR:");
+			}
+			
+			}
+}
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		}

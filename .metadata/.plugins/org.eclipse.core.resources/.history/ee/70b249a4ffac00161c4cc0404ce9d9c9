@@ -11,21 +11,21 @@ public class ExMonos {
 			
 			String accStr="";
 			int acc=1;
-			double pesogorilamax = Double.MIN_VALUE;
+			double pesogorilamax = Integer.MIN_VALUE;
 			String pesogorilamaxStr="";
-			double pesogorilamin = Double.MAX_VALUE;
+			double pesogorilamin = Integer.MIN_VALUE;
 			String pesogorilaminStr="";
-			double pesochimpmax = Double.MIN_VALUE;
+			double pesochimpmax = Integer.MIN_VALUE;
 			String pesochimpmaxStr="";
-			double pesochimpmin = Double.MAX_VALUE;
+			double pesochimpmin = Integer.MIN_VALUE;
 			String pesochimpminStr="";
 			int edadgorilamax = Integer.MIN_VALUE;
 			String edadgorilamaxStr="";
-			int edadgorilamin = Integer.MAX_VALUE;
+			int edadgorilamin = Integer.MIN_VALUE;
 			String edadgorilaminStr="";
 			int edadchimpmax = Integer.MIN_VALUE;
 			String edadchimpmaxStr="";
-			int edadchimpmin = Integer.MAX_VALUE;
+			int edadchimpmin = Integer.MIN_VALUE;
 			String edadchimpminStr="";
 			String acc2Str ="";
 			int acc2 = 0;
@@ -74,8 +74,6 @@ public class ExMonos {
 						edadchimpmaxStr = buffer.readLine();
 						edadchimpmax = Integer.parseInt(edadchimpmaxStr);
 					}
-					
-					
 				}
 				
 				if (acc2==2) {

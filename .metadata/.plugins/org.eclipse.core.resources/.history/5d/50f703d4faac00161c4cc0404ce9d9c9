@@ -11,22 +11,10 @@ public class ExMonos {
 			
 			String accStr="";
 			int acc=1;
-			double pesogorilamax = Double.MIN_VALUE;
-			String pesogorilamaxStr="";
-			double pesogorilamin = Double.MAX_VALUE;
-			String pesogorilaminStr="";
-			double pesochimpmax = Double.MIN_VALUE;
-			String pesochimpmaxStr="";
-			double pesochimpmin = Double.MAX_VALUE;
-			String pesochimpminStr="";
-			int edadgorilamax = Integer.MIN_VALUE;
-			String edadgorilamaxStr="";
-			int edadgorilamin = Integer.MAX_VALUE;
-			String edadgorilaminStr="";
-			int edadchimpmax = Integer.MIN_VALUE;
-			String edadchimpmaxStr="";
-			int edadchimpmin = Integer.MAX_VALUE;
-			String edadchimpminStr="";
+			double pesogorilamax = 0;
+			double pesochimpmax = 0;
+			int edadgorilamax = 0;
+			int edadchimpmax = 0;
 			String acc2Str ="";
 			int acc2 = 0;
 			String ingStr = "";
@@ -52,11 +40,9 @@ public class ExMonos {
 				ingStr = buffer.readLine();
 				ing = Integer.parseInt(ingStr);
 				
-				for (int i=0; i<ing; i++) {
 				System.out.println("ELIJA TIPO DE MONO. [1] CHIMPANCÉ - [2] GORILA");
 				acc2Str = buffer.readLine();
 				acc2 = Integer.parseInt(acc2Str);
-				
 				
 				while (acc2!=1 || acc2!=2) {
 					System.out.println("TIPO ERRÓNEO. ELIJA TIPO DE MONO. [1] CHIMPANCÉ - [2] GORILA");
@@ -65,16 +51,6 @@ public class ExMonos {
 				}
 				
 				if (acc2==1) {
-					System.out.println("Introduzca la edad del chimpancé. Debe estar entre 0 y 50 años");
-					edadchimpmaxStr = buffer.readLine();
-					edadchimpmax = Integer.parseInt(edadchimpmaxStr);
-					
-					while (edadchimpmax<0 && edadchimpmax>50) {
-						System.out.println("Edad errónea. Introduzca la edad del chimpancé. Debe estar entre 0 y 50 años");
-						edadchimpmaxStr = buffer.readLine();
-						edadchimpmax = Integer.parseInt(edadchimpmaxStr);
-					}
-					
 					
 				}
 				
@@ -82,7 +58,7 @@ public class ExMonos {
 					
 				}
 					
-				}
+			
 				
 			}
 			

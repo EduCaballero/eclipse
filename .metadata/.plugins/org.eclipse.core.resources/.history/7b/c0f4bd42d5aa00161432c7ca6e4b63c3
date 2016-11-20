@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+public class prueba {
+	
+	public static String fecha() {
+		Date fecha=new Date
+	}
+    public static void main(String[] args) throws IOException {
+      
+    	annio = Integer.toString(c.get(Calendar.YEAR));
+    	System.out.print(annio = Integer.toString(c.get(Calendar.YEAR));
+    	
+    
+    }
+} 

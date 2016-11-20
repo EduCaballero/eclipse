@@ -1,0 +1,21 @@
+
+public class Ex04 {
+	public static void main (String[] args) {
+
+		/*int radi= 10;
+		double longitud = 0;
+		double area = 0;
+		// Math.PI es una constante de Java que contiene el valor del número PI
+		longitud = 2 * Math.PI * radi;
+		// Math.pow es un método de Java que permite calcular la potencia de un número
+		area = Math.PI * Math.pow(radi,2); // PI * radi elevado a 2
+		System.out.println ("La longitud es: " + longitud + " y el area es: " + area );
+		*/
+		
+		int radio= 10;
+		double longitud = 2 * Math.PI * radio; // Math.PI es una constante de Java que contiene el valor del número PI
+		double area = Math.PI * Math.pow(radio,2); // PI * radio elevado a 2 - Math.pow es un método de Java que permite calcular la poténcia de un número
+		System.out.println ("La longitud es: " + longitud + " y el area es: " + area );
+		
+	}
+}

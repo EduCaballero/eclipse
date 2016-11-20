@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\amand\Desktop\Estudios\Eclipse"/>
 		<item value="C:\Users\usu32\Desktop\eclipse\workspace"/>
 	</list>
 	<section name="NewWizardAction">

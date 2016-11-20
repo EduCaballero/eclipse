@@ -1,0 +1,11 @@
+import java.io.*;
+public class prueba {
+	
+    public static void main(String[] args) throws IOException {
+      
+    	
+    	System.out.print(annio = Integer.toString(c.get(Calendar.YEAR));
+    	
+    
+    }
+} 

@@ -1,0 +1,11 @@
+
+public class Ex05 {
+	public static void main (String[] args){
+		
+		double kmh = 180;
+		double ms = (kmh * 1000) / 3600;
+		
+		System.out.print (kmh + " Km/h son " + ms + " m/s");
+		 
+	}
+}

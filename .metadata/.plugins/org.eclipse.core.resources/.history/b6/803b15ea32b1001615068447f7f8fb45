@@ -1,0 +1,111 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class TortugasNinja {
+public static void main (String[] args) {
+		
+		try{
+						
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			String accStr="";
+			int acc=0;	
+			String malosdesStr="";
+			int malosdes=0;
+			String inocentessalStr="";
+			int inocentessal=0;
+			String nomtorrealizacionStr=""; //nombreTortugaRealizacion
+			boolean michelangelor=false;
+			boolean donatelor=false;
+			boolean leonardor=false;
+			boolean raphaelr=false;
+			String realizacionmichStr="";
+			double realizacionmich=-1;
+			String realizaciondonStr="";
+			double realizaciondon=-1;
+			String realizacionleoStr="";
+			double realizacionleo=-1;
+			String realizacionrapStr="";
+			double realizacionrap=-1;
+			
+			while (acc!=8){
+				System.out.println();
+				System.out.println("-----------MENÚ PRINCIPAL--------------");
+				System.out.println("[1] - REGISTRAR MALOS");
+				System.out.println("[2] - REGISTRAR INOCENTES");
+				System.out.println("[3] - REGISTRAR REALIZACIÓN");
+				System.out.println("[4] - MOSTRAR GRADO DE INCIDENCIA DE LA CIUDAD");
+				System.out.println("[5] - VER EQUILIBRIO");
+				System.out.println("[6] - MEJORAR REALIZACIÓN");
+				System.out.println("[7] - RANKING REALIZACIÓN");
+				System.out.println("[8] - SALIR");
+				System.out.println("---------------------------------------");
+				System.out.println();
+				System.out.println("ELIJA OPCIÓN:");
+				accStr = buffer.readLine();
+				acc = Integer.parseInt(accStr);
+				
+				if (acc>8 || acc<=0) System.out.println("Error. Opción no válida");
+				
+				if (acc==1){
+					while (malosdes<=0){				
+					System.out.println("Introduce el número de malos desarmados");
+					malosdesStr = buffer.readLine();
+					malosdes = Integer.parseInt(malosdesStr);
+					}				
+				}
+				
+				if (acc==2){
+					while (inocentessal<=0){				
+						System.out.println("Introduce el número de inocentes salvados");
+						inocentessalStr = buffer.readLine();
+						inocentessal = Integer.parseInt(inocentessalStr);
+					}				
+				}
+				
+				//if (acc==3 && contrealizacion>0 ) System.out.println("Ya has introducido la valoración del día");
+				
+				if (acc==3){
+					System.out.println("¡Cowabunga! Introduce tu nombre");
+					nomtorrealizacionStr = buffer.readLine();
+					nomtorrealizacionStr=nomtorrealizacionStr.toLowerCase();
+					
+					if (nomtorrealizacionStr.equals("leonardo") && leonardor==false){
+						while (realizacionleo<0 || realizacionleo>10){
+							System.out.println("Introduce la valoración del día del 0 al 10");
+							realizacionleoStr = buffer.readLine();
+							realizacionleo = Double.parseDouble(realizacionleoStr);
+							leonardor=true; //aquí creo que debería ir un if, xq si no cuando entra en el bucle ya lo pone en true aunque no sea número de 0 a 10
+						}
+					}
+						
+					else if (nomtorrealizacionStr.equals("michelangelo")){
+						
+					}
+						
+					else if (nomtorrealizacionStr.equals("donatello")){
+						
+					}
+							
+					else if (nomtorrealizacionStr.equals("raphael")){
+						
+					}
+						
+					else System.out.println("¡Masilla detectado! Error.");
+					
+					
+					}
+				}
+				
+				
+				
+				
+				
+			}
+}
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		}
+		}

@@ -1,6 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class TortugasNinja {
 public static void main (String[] args) {
@@ -36,6 +36,7 @@ public static void main (String[] args) {
 			double realizacionleo2=-1;
 			String realizacionrap2Str="";
 			double realizacionrap2=-1;
+			//double aux=0;
 			//int incidencia=0;
 			
 			while (acc!=8){
@@ -145,6 +146,10 @@ public static void main (String[] args) {
 							realizacionleo2 = Double.parseDouble(realizacionleo2Str);
 							if (realizacionleo2>=0 && realizacionleo2<=10) {
 								realizacionleo=realizacionleo+realizacionleo2;
+								if (realizacionleo>10) {
+									System.out.println("Error, la realización no puede ser mayor de 10");
+									realizacionleo=realizacionleo-realizacionleo2;
+								}
 								realizacionleo2=-1; //esto es por si queremos volver a introducir otra mejora de realización, ya que no especifica que sea sólo una al día
 								break;
 							}							
@@ -158,6 +163,10 @@ public static void main (String[] args) {
 							realizacionmich2 = Double.parseDouble(realizacionmich2Str);
 							if (realizacionmich2>=0 && realizacionmich2<=10) {
 								realizacionmich=realizacionmich+realizacionmich2;
+								if (realizacionmich>10){
+									System.out.println("Error, la realización no puede ser mayor de 10");
+									realizacionmich=realizacionmich-realizacionmich2;
+								}
 								realizacionmich2=-1;
 								break;
 							}	
@@ -170,7 +179,11 @@ public static void main (String[] args) {
 							realizaciondon2Str = buffer.readLine();
 							realizaciondon2 = Double.parseDouble(realizaciondon2Str);
 							if (realizaciondon2>=0 && realizaciondon2<=10) {
-								realizaciondon=realizaciondon+realizaciondon2;
+								realizaciondon=realizaciondon-realizaciondon2;
+								if (realizaciondon>10){
+									System.out.println("Error, la realización no puede ser mayor de 10");
+									realizaciondon=realizaciondon-realizaciondon2;
+								}
 								realizaciondon2=-1;
 								break;
 							}	
@@ -184,6 +197,10 @@ public static void main (String[] args) {
 							realizacionrap2 = Double.parseDouble(realizacionrap2Str);
 							if (realizacionrap2>=0 && realizacionrap2<=10) {
 								realizacionrap=realizacionrap+realizacionrap2;
+								if (realizacionrap>10){
+									realizacionrap=realizacionrap-realizacionrap2;
+									System.out.println("Error, la realización no puede ser mayor de 10");
+								}
 								realizacionrap2=-1;
 								break;
 							}	
@@ -193,24 +210,206 @@ public static void main (String[] args) {
 					else System.out.println("¿Eres un masilla? ¡El nombre es incorrecto!");
 				}
 				
-				if (acc==7){ //me lo ordena al revés y, además, sólo aparecen los números y no los nombres
+				if (acc==7){ /*//me lo ordena al revés y, además, sólo aparecen los números y no los nombres
 					//Array de double
 			        double [] nombres = {realizacionmich, realizaciondon, realizacionrap, realizacionleo};
 			 
 			        //Ordena el array
 			        Arrays.sort(nombres);
 			 
-			        //Mostramos el array ya ordenado
-			        for (double i : nombres) {
-			            System.out.print(i + ", ");
-			        }
+			        //Mostramos el array ya ordenado --- este no vale, es de menor a mayor
+			        //for (double i : nombres) {
+			        //    System.out.print(i + ", ");
+			        //}
+			        //for(int i =nombres.length-1; i>=0; i--){ // con esto lo ordena de mayor a menor, pero no muestra el nombre
+			        //	System.out.println(nombres[i]);*/
+					
+					
+						
+						///*/*/*/*/*/*/*/* if(realizacionmich > realizaciondon){
+						   /*Intercambiar los numeros de menor a medio1*/
+						 //   aux=realizaciondon;
+						//    realizaciondon=realizacionmich;
+						//    realizacionmich=aux;
+						// }
+						// if(realizacionmich > realizacionrap){
+						   /*Intercambiar los numeros de menor a medio2*/
+						 //      aux=realizacionrap;
+						 //      realizacionrap=realizacionmich;
+						 //   realizacionmich=aux;
+						 //}
+						// if(realizaciondon > realizacionleo){
+						      /*Intercambiar los numeros de medio1  a mayor*/
+						//   aux=realizacionleo;
+						//   realizacionleo=realizaciondon;
+						 //  realizaciondon=aux;
+						// }
+						// if(realizacionrap > realizacionleo){
+						   /*Intercambiar los numeros de medio2 a mayor*/
+						 //  aux=realizacionleo;
+						 //  realizacionleo=realizacionrap;
+						  // realizacionrap=aux;
+						// }
+						// if(realizacionmich > realizaciondon){
+						    /*Intercambiar los numeros de menor a medio1*/
+						 //   aux=realizaciondon;
+						 //   realizaciondon=realizacionmich;
+						 //   realizacionmich=aux;
+						// }
+						 
+						// System.out.println("El mayor es " + realizacionleo);
+						// System.out.println("El menor es " + realizacionmich);
+						// System.out.println("El medio1 es " + realizaciondon);
+						// System.out.println("El medio2 es " + realizacionrap);
+					
+					if (realizacionleo>realizacionmich && realizacionleo>realizaciondon && realizacionleo>realizacionrap){
+						System.out.println("Leonardo: " + realizacionleo);
+						if (realizacionmich>realizaciondon && realizacionmich>realizacionrap){
+							System.out.println("Michelangelo" + realizacionmich);
+							if (realizaciondon>realizacionrap){ 
+								System.out.println("Donatello: " + realizaciondon);
+								System.out.println("Raphael" + realizacionrap);
+							}
+							else {System.out.println("Raphael" + realizacionrap);
+								  System.out.println("Donatello: " + realizaciondon);
+							}
+						}
+						if (realizaciondon>realizacionmich && realizaciondon>realizacionrap){
+							System.out.println("Donatello: " + realizaciondon);
+							if (realizacionmich>realizacionrap){
+								System.out.println("Michelangelo: " + realizacionmich);
+								System.out.println("Raphael: " + realizacionrap);
+							}
+							else {System.out.println("Raphael: " + realizacionrap);
+								  System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+						if (realizacionrap>realizacionmich && realizacionrap>realizaciondon){
+							System.out.println("Raphael: " + realizacionrap);
+							if (realizacionmich>realizaciondon){
+								System.out.println("Michelangelo: " + realizacionmich);
+								System.out.println("Donatello: " + realizaciondon);
+							}
+							else {
+								System.out.println("Donatello: " + realizaciondon);
+								System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+					}
+					////////////////////////////////
+					if (realizacionmich>realizacionleo && realizacionmich>realizaciondon && realizacionmich>realizacionrap){
+						System.out.println("Michelangelo: " + realizacionmich);
+						if (realizacionleo>realizaciondon && realizacionleo>realizacionrap){
+							System.out.println("Leonardo" + realizacionleo);
+							if (realizaciondon>realizacionrap){ 
+								System.out.println("Donatello: " + realizaciondon);
+								System.out.println("Raphael: " + realizacionrap);
+							}
+							else {System.out.println("Raphael: " + realizacionrap);
+								  System.out.println("Donatello: " + realizaciondon);
+							}
+						}
+						if (realizaciondon>realizacionleo && realizaciondon>realizacionrap){
+							System.out.println("Donatello: " + realizaciondon);
+							if (realizacionleo>realizacionrap){
+								System.out.println("Leonardo: " + realizacionleo);
+								System.out.println("Raphael: " + realizacionrap);
+							}
+							else {System.out.println("Raphael" + realizacionrap);
+								  System.out.println("Leonardo: " + realizacionleo);
+							}
+						}
+						if (realizacionrap>realizacionleo && realizacionrap>realizaciondon){
+							System.out.println("Raphael" + realizacionrap);
+							if (realizacionmich>realizaciondon){
+								System.out.println("Leonardo: " + realizacionleo);
+								System.out.println("Donatello: " + realizaciondon);
+							}
+							else {
+								System.out.println("Donatello: " + realizaciondon);
+								System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+					}
+					////////////////////////////////	 
+					if (realizaciondon>realizacionmich && realizaciondon>realizacionleo && realizaciondon>realizacionrap){
+						System.out.println("Donatello: " + realizaciondon);
+						if (realizacionmich>realizacionleo && realizacionmich>realizacionrap){
+							System.out.println("Michelangelo" + realizacionmich);
+							if (realizacionleo>realizacionrap){ 
+								System.out.println("Leonardo: " + realizacionleo);
+								System.out.println("Raphael" + realizacionrap);
+							}
+							else {System.out.println("Raphael" + realizacionrap);
+								  System.out.println("Leonardo: " + realizacionleo);
+							}
+						}
+						if (realizacionleo>realizacionmich && realizacionleo>realizacionrap){
+							System.out.println("Leonardo: " + realizacionleo);
+							if (realizacionmich>realizacionrap){
+								System.out.println("Michelangelo: " + realizacionmich);
+								System.out.println("Raphael: " + realizacionrap);
+							}
+							else {System.out.println("Raphael: " + realizacionrap);
+								  System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+						if (realizacionrap>realizacionmich && realizacionrap>realizacionleo){
+							System.out.println("Raphael: " + realizacionrap);
+							if (realizacionmich>realizacionleo){
+								System.out.println("Michelangelo: " + realizacionmich);
+								System.out.println("Leonardo: " + realizacionleo);
+							}
+							else {
+								System.out.println("Leonardo: " + realizacionleo);
+								System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+					}
+					//////////////////////////////////////
+					if (realizacionrap>realizacionmich && realizacionrap>realizaciondon && realizacionrap>realizacionleo){
+						System.out.println("Raphael: " + realizacionrap);
+						if (realizacionmich>realizaciondon && realizacionmich>realizacionleo){
+							System.out.println("Michelangelo: " + realizacionmich);
+							if (realizaciondon>realizacionleo){ 
+								System.out.println("Donatello: " + realizaciondon);
+								System.out.println("Leonardo: " + realizacionleo);
+							}
+							else {System.out.println("Leonardo: " + realizacionleo);
+								  System.out.println("Donatello: " + realizaciondon);
+							}
+						}
+						if (realizaciondon>realizacionmich && realizaciondon>realizacionleo){
+							System.out.println("Donatello: " + realizaciondon);
+							if (realizacionmich>realizacionleo){
+								System.out.println("Michelangelo: " + realizacionmich);
+								System.out.println("Leonardo: " + realizacionleo);
+							}
+							else {System.out.println("Leonardo: " + realizacionleo);
+								  System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+						if (realizacionleo>realizacionmich && realizacionleo>realizaciondon){
+							System.out.println("Leonardo: " + realizacionleo);
+							if (realizacionmich>realizaciondon){
+								System.out.println("Michelangelo: " + realizacionmich);
+								System.out.println("Donatello: " + realizaciondon);
+							}
+							else {
+								System.out.println("Donatello: " + realizaciondon);
+								System.out.println("Michelangelo: " + realizacionmich);
+							}
+						}
+					}
+					
 				}
 				
-				if (acc==8) System.out.println("¡Cowabunga!");
+				if (acc==8) System.out.println("¡Cowabunga!");			
 				
-				
-			}
+			
 }
+			
+		}
 		
 		catch (Exception e){
 			System.out.println("Error al introducir los números " + e);

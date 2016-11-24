@@ -201,7 +201,7 @@ public static void main (String[] args) {
 			        //Ordena el array
 			        Arrays.sort(nombres);
 			 
-			        //Mostramos el array ya ordenado --- este no vale, es de menor a mayor
+			        //Mostramos el array ya ordenado
 			        //for (double i : nombres) {
 			        //    System.out.print(i + ", ");
 			        //}

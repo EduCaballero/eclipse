@@ -25,7 +25,7 @@ public class Ex04 {
 
 		/*
 
-		* declaramos i como integer y le damos valor 0, declaramos j con el tamaño del valor del array (menos una posición ya
+		* declaramos "i" como integer y le damos valor 0, declaramos j con el tamaño del valor del array (menos una posición ya
 
 		* que se cuenta la posición 0 también). Mientras i valga menos que la mitad del temaño del array, se le sumará uno al
 

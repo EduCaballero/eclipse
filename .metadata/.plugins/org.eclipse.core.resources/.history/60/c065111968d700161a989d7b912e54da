@@ -122,9 +122,6 @@ c.	Mostrar el contingut de la posició 3 de l’array.
 			for(int i = 0;i<3;i++){
 				sumaarray2+=secondarray.get(i);
 				}
-			
-			// suma = secondarray.get(0) + secondarray.get(1) + ... de esta forma también se podría sumar
-			
 			System.out.println("El resultado de la suma de las tres primeras posiciones es " + sumaarray2);
 			System.out.println();
 			
@@ -149,7 +146,7 @@ c.	Mostrar el contingut de la posició 3 de l’array.
 	// 10.	Eliminar el primer array creat. 
 			
 			firstarray.clear();
-			System.out.println(firstarray); // de esta forma también se enseña el array sin tener que hacer bucle
+			System.out.println(firstarray);
 			for(int i = 0;i<firstarray.size();i++){ // esto, lógicamente, no nos va a devolver nada porque hemos hecho el clear al array, por tanto no puedo hacer captura
 				 System.out.println(firstarray.get(i));
 				}

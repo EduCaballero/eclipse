@@ -1,0 +1,60 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class BuenosPropositos {
+public static void main(String[] args) {
+		
+		try{
+			
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+		int opt=1;
+		int[]minutosEjer=new int[6];
+		
+		System.out.println("Este programa va a ayudarte con la realización de los propositos que tienes para este año");
+		System.out.println();
+		
+		while (opt!=8){
+			
+			System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+			System.out.println();
+			System.out.println("===============================================================");
+			System.out.println();
+			System.out.println("1. Propósito hacer ejercicio:");
+			System.out.println();
+			System.out.println("2. Propósito alimentarse bien:");
+			System.out.println();
+			System.out.println("3. Propósito aprovechar el tiempo y trabajar más:");
+			System.out.println();
+			System.out.println("4. Valorar ejercicio hecho:");
+			System.out.println();
+			System.out.println("5. Valorar alimentación:");
+			System.out.println();
+			System.out.println("6. Valorar productividad de cada día:");
+			System.out.println();
+			System.out.println("7. Valoración general:");
+			System.out.println();
+			System.out.println("8. Salir:");
+			System.out.println();
+			
+			if (opt>8 || opt<=0) System.out.println("Error. Opción no válida");
+			
+			if (opt==8) System.out.println("¡Ánimo, tú puedes!");
+			
+			if (opt==1){
+				System.out.println("A continuación introduce los minutos de ejrecicio que has realizado durante la semana:");
+				System.out.println("Minutos que has hecho de ejercicio el lunes:");
+			}
+			
+		}
+		        
+		}
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		
+	}
+	
+}

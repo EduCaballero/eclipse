@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class BuenosPropositos {
+public static void main(String[] args) {
+		
+		try{
+			
+		int opt=1;
+		
+		System.out.println("Este programa va a ayudarte con la realización de los propositos que tienes para este año");
+		System.out.println();
+		
+		while (opt!=0){
+			
+			System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+			System.out.println();
+			System.out.println("0. Salir");
+			System.out.println();
+			System.out.println("1. Propósito hacer ejercicio:");
+			
+			
+		}
+		        
+		}
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		
+	}
+	
+}

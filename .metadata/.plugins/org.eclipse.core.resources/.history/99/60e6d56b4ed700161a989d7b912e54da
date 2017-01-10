@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+
+public class Ex08ArrayList02 {
+public static void main(String[] args) {
+		
+		try{
+			
+			// 2.	Crear un segon ArrayList amb tots els seus valors de tipus enter, amb 15 valors inicials de diferents nombres. 
+			
+			ArrayList<Integer> firstarray = new ArrayList<Integer>();
+			
+			firstarray.add(15);
+			firstarray.add(16);
+			firstarray.add(17);
+			firstarray.add(18);
+			firstarray.add(19);
+			firstarray.add(20);
+			firstarray.add(21);
+			firstarray.add(22);
+			firstarray.add(23);
+			firstarray.add(24);
+			firstarray.add(25);
+			firstarray.add(26);
+			firstarray.add(27);
+			firstarray.add(28);
+			firstarray.add(29);
+			
+			for(int i = 0;i<firstarray.size();i++){
+				 System.out.println(firstarray.get(i));
+				}
+		        
+		}
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		
+	}
+	
+}

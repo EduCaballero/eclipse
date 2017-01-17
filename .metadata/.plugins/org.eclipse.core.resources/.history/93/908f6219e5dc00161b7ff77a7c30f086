@@ -1,0 +1,156 @@
+import java.io.*;
+import java.util.*;
+
+public class BuenaAlimentacion {
+public static void main(String[] args) {
+		
+		try{
+			
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+		int opt=0;
+		ArrayList<Integer> frutacons = new ArrayList<Integer>();
+		ArrayList<String> diasSemana = new ArrayList<String>();
+		diasSemana.add("lunes");
+		diasSemana.add("martes");
+		diasSemana.add("miércoles");
+		diasSemana.add("jueves");
+		diasSemana.add("viernes");
+		diasSemana.add("sábado");
+		diasSemana.add("domingo");		
+		// System.out.println(diasSemana); con esto comprobaría si funciona los datos que he metido anteriormente en el array diasSemana
+		ArrayList<Integer> caloriascons = new ArrayList<Integer>();
+		ArrayList<Double> salcons = new ArrayList<Double>();
+		int sumaejercicio=0;
+		int sumaejerciciohoras=0;
+		boolean mas45=true;
+		int contsinejer=0;
+		int contsinfruta=0;
+		int contsinprod=0;
+		int conttotal=0;
+		int frutatotal=0;
+		int frutamedia=0;
+		int diamaxconsumo=Integer.MIN_VALUE;
+		int diamaxconsumovalor=0;
+		int diaminconsumo=Integer.MAX_VALUE;
+		int diaminconsumovalor=Integer.MAX_VALUE;
+		ArrayList<Integer> productividad = new ArrayList<Integer>();
+		ArrayList<Integer> productividad2 = new ArrayList<Integer>();
+		ArrayList<Integer> productividad3 = new ArrayList<Integer>();
+		ArrayList<Integer> productividadtotal = new ArrayList<Integer>();
+		int salconstotal=0; //ya no lo uso, era para hacerlo sin array
+		int productividadsumar=0;
+		//int contgeneral=0;
+		//boolean valoracionejer=false;
+		//boolean valoracionefruta=false;
+		//boolean valoracioneprod=false;
+
+		
+		System.out.println("Este programa va a ayudarte con tu dieta");
+		System.out.println();
+		
+		while (opt!=8){
+			
+			System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+			System.out.println();
+			System.out.println("===============================================================");
+			System.out.println();
+			System.out.println("1. Propósito comer más fruta");
+			System.out.println();
+			System.out.println("2. Propósito consumir las calorías justas");
+			System.out.println();
+			System.out.println("3. Propósito poca sal");
+			System.out.println();
+			System.out.println("4. Calcular calorías consumidas");
+			System.out.println();
+			System.out.println("5. Calcular media calorías semanal");
+			System.out.println();
+			System.out.println("6. Valorar consumo de fruta y verdura");
+			System.out.println();
+			System.out.println("7. Valoración general:");
+			System.out.println();
+			System.out.println("8. Salir:");
+			System.out.println();
+			System.out.println("Elije una opción:");
+			opt= Integer.parseInt(buffer.readLine());
+			
+			if (opt>8 || opt<=0) {
+				System.out.println("Error. Opción no válida");
+				System.out.println();
+			}
+			
+			if (opt==8) System.out.println("¡Ánimo, tú puedes!");
+			
+			if (opt==1){
+				System.out.println("Introduce la cantidad de fruta y verdura consumida cada día");
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					 System.out.println("Fruta y verdura consumida el " + diasSemana.get(i));
+					 frutacons.add(Integer.parseInt(buffer.readLine()));
+			}
+			
+			if (opt==2){
+				System.out.println("A continuación introduce la cantidad de calorías consumidas cada día de la semana");
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					 System.out.println("Cantidad de piezas de fruta y verdura consumidas el " + diasSemana.get(i));
+					 caloriascons.add(Integer.parseInt(buffer.readLine()));
+			}
+			
+			if (opt==3){
+				System.out.println("A continuación introduce la cantidad cucharadas de sal consumidas durante la semana");
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					 System.out.println("Número de horas productivas el " + diasSemana.get(i));
+					 salcons.add(Integer.parseInt(buffer.readLine()));
+			}
+			
+			if (opt==4){				
+				if (sumaejerciciohoras>7 && mas45==true){
+					System.out.println("Valoración positiva. ¡Estás hecho un campeón! Esta semana has hecho " + sumaejerciciohoras + " horas de ejercicio y 45 min. mínimo cada día.");
+				}
+				if (sumaejerciciohoras<=7 || mas45==false){
+					System.out.println("Valoración negativa. ¡Tienes que trabajar más!");				
+				}
+			}
+			
+			if (opt==5){
+				System.out.println("La media de piezas de fruta y verdura consumidas esta semana es de " + frutamedia);
+				System.out.println("El día que más fruta y verdura has consumido ha sido el " + diasSemana.get(diamaxconsumo));
+				System.out.println("El día que menos fruta y verdura has consumido ha sido el " + diasSemana.get(diaminconsumo));
+				System.out.println();
+			}
+			
+			if (opt==6){ //estos dos bucles se pueden juntar en uno, ya que tienen el mismo tamaño(size) pero lo dejo en dos para entender mejor los pasos si tengo que repasar
+				for (int i = 0; i < productividad.size(); i++) { //con esto sumo los 3 arrays y guardo el resultado en otro array llamado productividadtotal
+			        productividadtotal.add(productividad.get(i) + productividad2.get(i) + productividad3.get(i));
+				}
+				for(int i = 0;i<diasSemana.size();i++){
+					if (productividadtotal.get(i)<5){
+						contsinprod++;
+					}
+					 System.out.println("El  " + diasSemana.get(i) + " tienes " + productividadtotal.get(i) + " puntos de productividad");
+				}
+				if (contsinprod==0){
+					conttotal++;
+				}
+				//System.out.println("contador total " + conttotal);
+			}
+			
+			if(opt==7){ //se podría hacer más corto utilizando un mensaje genérico y el conttotal
+				if (conttotal==3) System.out.println("¡Felicidades, has cumplido los 3 propositos! ¡A por el Toblerone!");
+				if (conttotal==2) System.out.println("¡Felicidades, has cumplido 2 de los 3 propositos! ¡A por un par de onzas de Toblerone!");
+				if (conttotal==1) System.out.println("Debes esforzarte más, sólo has cumplido 1 de los 3 propositos.");
+				if (conttotal==0) System.out.println("Eres un desastre, no has cumplido ningún proposito!!! (0 de 3)");
+			}
+		}
+		        
+		}
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		
+	}
+	
+}

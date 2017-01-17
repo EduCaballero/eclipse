@@ -1,0 +1,172 @@
+import java.io.*;
+import java.util.*;
+
+public class BuenosPropositosCrorregidoDiana {
+	public static void main(String[] args) {
+		try {
+
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			int totalfrutas = 0;
+			int posmax = 0;
+			int posmin = 0;
+			int minfrutas = Integer.MAX_VALUE;
+			int maxfrutas = Integer.MIN_VALUE;
+			int opcion = 0;
+			ArrayList<String> dias = new ArrayList<String>();
+			ArrayList<Integer> minutosEj = new ArrayList<Integer>();
+			ArrayList<Integer> pfruta = new ArrayList<Integer>();
+			ArrayList<Integer> Hproduct = new ArrayList<Integer>();
+			ArrayList<Integer> productividad = new ArrayList<Integer>();
+			int totalex = 0;
+			boolean verdad = true;
+
+			dias.add("Lunes");
+			dias.add("Martes");
+			dias.add("Miercoles");
+			dias.add("Jueves");
+			dias.add("Viernes");
+			dias.add("Sabado");
+			dias.add("Domingo");
+
+			while(opcion != 8){
+
+				System.out.println("Elija una opcion = ");
+				System.out.println("[1]- Proposito hacer ejercicio");
+				System.out.println("[2]- Proposito alimentarse bien");
+				System.out.println("[3]- Aprovechar el tiempo y trabajar mas");
+				System.out.println("[4]- Valorar ejercicio hecho");
+				System.out.println("[5]- Valorar alimentacion");
+				System.out.println("[6]- Productividad de cada dia");
+				System.out.println("[7]- Valoracion general");
+				System.out.println("[8]- Salir");
+				opcion = Integer.parseInt(buffer.readLine());
+
+				switch(opcion){
+
+				case 1:
+					minutosEj.clear();
+					for(int i = 0; i < 7; i++){
+						System.out.println("Minutos de ejercicio el dia" + dias.get(i));
+						minutosEj.add(Integer.parseInt(buffer.readLine()));
+						totalex += minutosEj.get(i);
+						if(minutosEj.get(i)<45){
+							verdad = false;
+						} 
+					}
+					break;
+
+				case 2:
+					pfruta.clear();
+					for(int i = 0; i < 7; i++){
+						System.out.println("Cuantas piezas de fruta y verdura has comido el" + dias.get(i));
+						pfruta.add(Integer.parseInt(buffer.readLine()));
+						totalfrutas += pfruta.get(i);
+
+						if(pfruta.get(i) > maxfrutas){
+							maxfrutas = pfruta.get(i);
+							posmax = i;					
+						}
+
+						if(pfruta.get(i) < minfrutas){
+							minfrutas = pfruta.get(i);
+							posmin = i;
+						}
+					}
+					break;
+
+				case 3:
+					Hproduct.clear();
+					for(int i = 0; i < 7; i++){
+						System.out.println("horas" + dias.get(i));
+						Hproduct.add(Integer.parseInt(buffer.readLine()));
+					}
+					break;
+
+				case 4:
+
+					if(totalex >= 420 && verdad){
+						System.out.println("Has cumplido con el objetivo de ejercicio esta semana, muy bien ^^");
+					} else {
+						System.out.println("No has cumplido con el objetivo, eres muy vago =.='");
+					}
+					break;
+
+				case 5:
+					System.out.println("La media de la fruta y verdura consumida durante la semana es de " + (totalfrutas / 7));
+					System.out.println("El dia en que se ha consumido menos ha sido el dia " + dias.get(posmin)
+					+ "con un total de " + minfrutas + "frutas/verduras" );
+					System.out.println("El dia en que se ha consumido m�s ha sido el dia " + dias.get(posmax)
+					+ "con un total de " + maxfrutas + "frutas/verduras" );
+
+					break;
+
+				case 6:
+					productividad.clear();
+					productividad.add(0);
+					productividad.add(0);
+					productividad.add(0);
+					productividad.add(0);
+					productividad.add(0);
+					productividad.add(0);
+					productividad.add(0);
+					
+					for (int i = 0; i < dias.size(); i++) {
+						if (minutosEj.get(i) >= 45) {
+							productividad.add(2);
+						}
+
+						if (pfruta.get(i) >= 5) {
+							productividad.set(i, productividad.get(i)+2);
+						}
+						
+						if (Hproduct.get(i) >= 8) {
+							productividad.set(i, productividad.get(i)+(Hproduct.get(i)-7));
+							
+						}
+						System.out.println(productividad);
+					}
+				case 7:
+					boolean ejer = true;
+					boolean fruta = true;
+					boolean prod = true;
+					int dias_no_e=0;
+					
+					for (int i=0;i<7;i++){
+						if(minutosEj.get(i)==0){
+							dias_no_e++;
+						}
+						if (pfruta.get(i)==0){
+							fruta=false;
+						}
+						if (Hproduct.get(i)<5){
+							prod=false;
+						}
+					}
+					if (dias_no_e>=2){
+						ejer=false;
+					}
+					
+					System.out.println("Objectius complerts aquesta setmana:");
+					if (ejer){
+						System.out.println("EJERCICIO");
+					}
+					if (fruta){
+						System.out.println("FRUTA");
+					}
+					if (prod){
+						System.out.println("PRODUCTIVIDAD");
+					}
+					
+					if((!ejer&&!fruta)||(!ejer&&!prod)||(!fruta&&!prod)){
+						System.out.println("hjhjhj!");
+					}else{
+						System.out.println("MUY BIEN! puedes comer chocolate :)");
+					}
+				}
+			}
+		} 
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}

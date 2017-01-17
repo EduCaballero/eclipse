@@ -1,0 +1,198 @@
+import java.io.*;
+import java.util.*;
+
+public class BuenaAlimentacion {
+public static void main(String[] args) {
+		
+		try{
+			
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			//(A1*0,1) para 1%
+		int opt=0;
+		ArrayList<Integer> frutacons = new ArrayList<Integer>();
+		ArrayList<String> diasSemana = new ArrayList<String>();
+		diasSemana.add("lunes");
+		diasSemana.add("martes");
+		diasSemana.add("miércoles");
+		diasSemana.add("jueves");
+		diasSemana.add("viernes");
+		diasSemana.add("sábado");
+		diasSemana.add("domingo");		
+		// System.out.println(diasSemana); con esto comprobaría si funciona los datos que he metido anteriormente en el array diasSemana
+		ArrayList<Integer> caloriascons = new ArrayList<Integer>();
+		ArrayList<Double> cuchacons = new ArrayList<Double>();
+		int caloriassumar=0;
+		int caloriasrestar=0;
+		int caloriasmedia=0;
+		int caloriastotal=0;
+		int contcal=0;
+		int contcal2=0;
+		int diamaxconsumo=Integer.MIN_VALUE;
+		int diamaxconsumovalor=0;
+		int diaminconsumo=Integer.MAX_VALUE;
+		int diaminconsumovalor=Integer.MAX_VALUE;
+		int frutatotal=0;
+		int frutamedia=0;
+		int proposito1=0;
+		int proposito2=0;
+		int proposito3=0;
+		int propositos=0;
+
+		
+		System.out.println("Este programa va a ayudarte con tu dieta");
+		System.out.println();
+		
+		while (opt!=8){
+			
+			System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+			System.out.println();
+			System.out.println("===============================================================");
+			System.out.println();
+			System.out.println("1. Propósito comer más fruta");
+			System.out.println();
+			System.out.println("2. Propósito consumir las calorías justas");
+			System.out.println();
+			System.out.println("3. Propósito poca sal");
+			System.out.println();
+			System.out.println("4. Calcular calorías consumidas");
+			System.out.println();
+			System.out.println("5. Calcular media calorías semanal");
+			System.out.println();
+			System.out.println("6. Valorar consumo de fruta y verdura");
+			System.out.println();
+			System.out.println("7. Valoración general:");
+			System.out.println();
+			System.out.println("8. Salir:");
+			System.out.println();
+			System.out.println("Elije una opción:");
+			opt= Integer.parseInt(buffer.readLine());
+			
+			if (opt>8 || opt<=0) {
+				System.out.println("Error. Opción no válida");
+				System.out.println();
+			}
+			
+			if (opt==8) System.out.println("¡Ánimo, tú puedes!");
+			
+			if (opt==1){
+				System.out.println("Introduce la cantidad de fruta y verdura consumida cada día");
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					 System.out.println("Fruta y verdura consumida el " + diasSemana.get(i));
+					 frutacons.add(Integer.parseInt(buffer.readLine()));
+					 
+					 if (diamaxconsumovalor<frutacons.get(i)){ //ejercicio 6
+						 diamaxconsumo=i;
+						 diamaxconsumovalor=frutacons.get(i);
+					 }
+					 if (diaminconsumovalor>frutacons.get(i)){
+						 diaminconsumo=i;
+						 diaminconsumovalor=frutacons.get(i);
+					 }
+					 
+					 if (frutacons.get(i)>=5){
+						 proposito1++; //ejercicio 7
+					 }
+					 frutatotal+=frutacons.get(i);					 				 
+				}
+				frutamedia=frutatotal/7;
+			}
+			
+			if (opt==2){
+				System.out.println("A continuación introduce la cantidad de calorías consumidas cada día de la semana");
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					 System.out.println("Calorías consumidas el " + diasSemana.get(i));
+					 caloriascons.add(Integer.parseInt(buffer.readLine()));
+				}
+			}
+			
+			if (opt==3){
+				System.out.println("A continuación introduce la cantidad cucharadas de sal consumidas durante la semana");
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					 System.out.println("Cucharadas de sal el " + diasSemana.get(i));
+					 cuchacons.add(Double.parseDouble(buffer.readLine()));
+					 if (cuchacons.get(i)>1){
+						 caloriassumar=caloriascons.get(i)+(caloriascons.get(i)*01);
+						 caloriascons.set(i, caloriassumar);
+					 }
+					 if (cuchacons.get(i)<1){
+						 proposito3++; //ejercicio 7
+					 }
+				}
+			}
+			
+			if (opt==4){				
+				//más eficiente meterlo en el bucle anterior, así no hemos de crear uno nuevo como, por ejemplo, hago con la suma de calorías
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					if (frutacons.get(i)>1){
+						caloriasrestar=caloriascons.get(i)-(caloriascons.get(i)*01);
+						 caloriascons.set(i, caloriasrestar);
+					 }
+				}
+			}
+			
+			if (opt==5){
+				for(int i = 0;i<diasSemana.size();i++){
+					caloriastotal+=caloriascons.get(i);
+				}
+				caloriasmedia=caloriastotal/7;
+				
+				for(int i = 0;i<diasSemana.size();i++){
+					if(caloriascons.get(i)>3000){
+						contcal++;
+						proposito2++; //ejercicio 7
+					}
+					if(caloriascons.get(i)<1500){
+						contcal2++;
+					}
+				}
+				if(contcal>=2){
+					System.out.println("Debes controlar la cantidad de calorías consumiendo menos. La cantidad media ha sido " + caloriasmedia);
+				}
+				if(contcal2>=2){
+					System.out.println("Debes controlar la cantidad de calorías consumiendo más. La cantidad media ha sido " + caloriasmedia);
+				}
+			}
+			
+			if (opt==6){
+				System.out.println("La media de piezas de fruta y verdura consumidas esta semana es de " + frutamedia);
+				System.out.println("El día que más fruta y verdura has consumido ha sido el " + diasSemana.get(diamaxconsumo));
+				System.out.println("El día que menos fruta y verdura has consumido ha sido el " + diasSemana.get(diaminconsumo));
+				System.out.println();
+			}
+			
+			if(opt==7){
+				if(proposito1>=6){
+					propositos++;
+				}
+				if(proposito2>1){
+					propositos++;
+				}
+				if(proposito1==7){
+					propositos++;
+				}
+				
+				if (propositos==3) System.out.println("¡Felicidades, has cumplido los 3 propositos! ¡A por el Toblerone!");
+				if (propositos==2) System.out.println("¡Felicidades, has cumplido 2 de los 3 propositos! ¡A por un par de onzas de Toblerone!");
+				if (propositos==1) System.out.println("Debes esforzarte más, sólo has cumplido 1 de los 3 propositos.");
+				if (propositos==0) System.out.println("Eres un desastre, no has cumplido ningún proposito!!! (0 de 3)");
+			}
+			
+			
+			
+		}
+		        
+		}
+			
+		
+		catch (Exception e){
+			System.out.println("Error al introducir los números " + e);
+		}
+		
+	}
+	
+}
+		

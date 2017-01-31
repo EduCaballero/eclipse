@@ -8,19 +8,20 @@ public class hormigas {
         	
             int numerodehormigas =0;
             int longpista= 0;
-            int [] posiciones = new int [longpista];
             int hormigaarriba=0;
             int hormigaabajo=0;
             int menor=Integer.MAX_VALUE ;
             int max=0;
             int z=0;
             
-            System.out.println("¿Cuánto mide la pista");
+            System.out.println("¿Cuánto mide la pista?");
             longpista= Integer.parseInt(buffer.readLine());
             while(longpista<=0){
             	 System.out.println("Error. Una pista no puede medir eso. ¿Cuánto mide la pista");
                  longpista= Integer.parseInt(buffer.readLine());
             }
+            
+            int [] posiciones = new int [longpista];
             
             System.out.println("¿Cuántas hormigas hay en la pista?");
             numerodehormigas =Integer.parseInt(buffer.readLine());

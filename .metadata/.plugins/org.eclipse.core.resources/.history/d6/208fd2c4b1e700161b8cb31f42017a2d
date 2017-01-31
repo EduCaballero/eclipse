@@ -18,14 +18,14 @@ public class hormigas {
             System.out.println("¿Cuánto mide la pista");
             longpista= Integer.parseInt(buffer.readLine());
             while(longpista<=0){
-            	 System.out.println("Error. Una pista no puede medir eso. ¿Cuánto mide la pista");
+            	 System.out.println("¿Cuánto mide la pista");
                  longpista= Integer.parseInt(buffer.readLine());
             }
             
             System.out.println("¿Cuántas hormigas hay en la pista?");
             numerodehormigas =Integer.parseInt(buffer.readLine());
             while(longpista<numerodehormigas){
-            	System.out.println("Error. No puede haber más hormigas que posiciones en la pista. ¿Cuántas hormigas hay en la pista?");
+            	System.out.println("¿Cuántas hormigas hay en la pista?");
                 numerodehormigas =Integer.parseInt(buffer.readLine());
             }
             

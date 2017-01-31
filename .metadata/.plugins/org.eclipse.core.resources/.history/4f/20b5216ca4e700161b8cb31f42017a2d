@@ -15,30 +15,27 @@ public class hormigas2 {
             int longpista= Integer.parseInt(buffer.readLine());
             
 
-            //int [] hormigas= new int [numerodehormigas]; ya no lo utilizo, era para la otra forma de hacer el ejercicio
+            int [] hormigas= new int [numerodehormigas];
             int [] posiciones = new int [longpista];
             int hormigaarriba=0;
             int hormigaabajo=0;
-            int menor=Integer.MAX_VALUE ;
+            int menor= 0;
             int max=0;
             int z=0;
                 
                 for(int i=0;i<numerodehormigas;i++){
                 	System.out.println("¿En qué posición quieres hormigas?");
                 	z= Integer.parseInt(buffer.readLine());
-                	posiciones[z-1]=1; // con esto recorremos el array entero metiendo datos
+                	posiciones[z]=1; // con esto recorremos el array entero metiendo datos
                 }
                 
                 for (int i=0;i<longpista;i++){
                 	if(posiciones[i]==1){
-                		hormigaarriba= longpista - (i+1);
-                		hormigaabajo= i+1; //esta variable se puede ahorrar, poniendo el i+1 abajo en lugar de "hormigaabajo" pero lo dejo de esta forma para entenderlo mejor en un futuro si he de revisar
-                		if(hormigaarriba>max ||  hormigaabajo>max) max= Math.max(hormigaarriba, hormigaabajo);
-                		if(hormigaarriba<menor ||  hormigaabajo<menor) menor= Math.min(hormigaarriba, hormigaabajo);
+                		hormigaarriba= (longpista-1)
+                		
+                		//menor= Math.min(arg0, arg1)
                 	}
                 }
-                
-                System.out.println("Las hormigas tardarán un máximo de " + max + " segundos y un mínimo de " + menor + " segundos");
                 
                 /*for (int i= 0; i<n.length; i++){
 				n[i]= Integer.parseInt(buffer.readLine()); // con esto recorremos el array entero metiendo datos

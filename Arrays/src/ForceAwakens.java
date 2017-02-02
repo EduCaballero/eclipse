@@ -116,7 +116,7 @@ public class ForceAwakens {
 				}
 				
 				if(opt==3){
-					energiamaxr=0;
+					energiamaxr=0; //esto podría ser energiamaxr=energiamaxi=supervivientesr=supervivientesi...=0
 		            energiamaxi=0;
 		            supervivientesr=0;
 		            supervivientesi=0;

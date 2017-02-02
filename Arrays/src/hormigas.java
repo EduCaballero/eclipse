@@ -22,6 +22,7 @@ public class hormigas {
             }
             
             int [] posiciones = new int [longpista];
+            int [] maxmin = new int [longpista];
             
             System.out.println("¿Cuántas hormigas hay en la pista?");
             numerodehormigas =Integer.parseInt(buffer.readLine());

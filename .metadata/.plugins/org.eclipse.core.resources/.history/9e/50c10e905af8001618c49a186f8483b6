@@ -1,0 +1,58 @@
+package matrices;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class avengers2 {
+	public static void main(String[] args) {
+		try {
+
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			int opt=0;
+			int pass=0;
+			int [][] avengers = new int[4][5];
+			
+			while (opt!=5){
+				
+				System.out.println();
+				System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+				System.out.println("===============================================================");
+				System.out.println("1. Registrar datos aleatorios");
+				System.out.println("2. Evaluar el más superhéroe");
+				System.out.println("3. Analizar misiones");
+				System.out.println("4. Reponer habilidades");
+				System.out.println("5. Salir");
+				System.out.println();
+				opt= Integer.parseInt(buffer.readLine());
+				
+				if (opt==5) System.out.println("El mundo sigue a salvo con nosotros, aunque seamos menos");
+				
+				if (opt>5 || opt<=0) {
+					System.out.println("Error. Opción no válida");
+					System.out.println();
+				}
+				
+				if (opt==1){
+					while (pass!=1234){
+						System.out.println("Introduce la contraseña supersecreta:");
+						pass= Integer.parseInt(buffer.readLine());
+					}
+					
+					for (int x=0;x<avengers.length;x++){
+						[x] = (int) (Math.random()*10);
+						[x] = (int) (Math.random()*10);
+						[x] = (int) (Math.random()*10);
+						[x] = (int) (Math.random()*10);
+						[x] = (int) (Math.random()*10);
+					}
+				}
+				
+				
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}

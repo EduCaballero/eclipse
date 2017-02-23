@@ -1,0 +1,107 @@
+import java.util.ArrayList;
+
+// Definición de la clase calculadora
+public class Calculadora {
+
+	// Método principal de la clase Calculadora que se ejecuta al principio
+	public static void main(String[] args) {
+		System.out.println("Suma");
+		int op1 = 3, op2 = 5;
+
+		// Llamada al método suma que hemos definido dentro de la clase Calculadora
+		// Devuelve un tipo entero que es la suma de los dos números
+		int op3 = suma(op1, op2);
+		System.out.println("La suma de " + op1 + " y " + op2 + " es igual a " + op3);
+		op3 = suma(4, 5);
+		System.out.println("La suma de 4 y 5 es igual a " + op3);
+		
+		//Llamo al método resta
+		int restatotal= resta(800, 3);
+		System.out.println("El resultado de la resta es " + restatotal);
+		
+		//Llamo al método multiplicación
+		int multtotal= multiplicacion(800, 3);
+		System.out.println("El resultado de la multiplicación es " + multtotal);
+		
+		//Llamo al método división
+		int divtotal= division(800, 3);
+		System.out.println("El resultado de la división es " + divtotal);
+		
+		//Llamo al método módulo
+		int modtotal= modulo(800, 3);
+		System.out.println("El módulo es " + modtotal);
+		
+		//Llamo al método factorial
+		int facttotal= factorial(5);
+		System.out.println("El factorial es " + facttotal);
+		
+		//Llamo al método divisores
+		System.out.println("Los divisores son:");
+		divisores(10);
+		
+		
+	}
+	
+	
+
+	// Definición del método suma, con dos parámetros que son los valores a
+	// sumar int es el tipo de dato que devuelve, en este caso la suma de los
+	// dos
+	// valores pasados como parámetro
+	static int suma(int operador1, int operador2) {
+		int operador3;
+		operador3 = operador1 + operador2;
+		// Valor que se devuelve a quien ha hecho la llamada del método
+		return operador3;
+	}
+
+	static int resta(int operador1, int operador2) { //método para una resta
+
+		int operador3;
+		operador3= operador1 - operador2;
+		return operador3;
+	}
+	
+	static int multiplicacion(int operador1, int operador2) {
+		int operador3;
+		operador3= operador1 * operador2;
+		return operador3;
+	}
+	
+	static int division(int operador1, int operador2) {
+		int operador3;
+		operador3= operador1 / operador2;
+		return operador3;
+	}
+	
+	static int modulo(int operador1, int operador2) {
+		int operador3;
+		operador3= operador1 % operador2;
+		return operador3;
+	}
+	
+	static int factorial(int operador1) {
+		int operador3=1;
+		for (int i=1; i<=operador1; i++){
+			operador3*=operador1;
+		}
+		
+		return operador3;
+	}
+	
+	static void divisores(int operador1) {
+		int n=operador1;
+		for (int i = 1 ; i <= n ; i++)
+			if (n % i == 0)
+				System.out.println (i);
+	}
+	static ArrayList<Integer> divisores(int operador1) {
+		int n=operador1;
+		ArrayList<Integer> lista = new ArrayList<>();
+		for (int i = 1 ; i <= n ; i++)
+			if (n % i == 0)
+				System.out.println (i);
+		
+		return lista;
+	}
+}

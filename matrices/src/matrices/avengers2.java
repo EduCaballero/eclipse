@@ -77,7 +77,24 @@ public class avengers2 {
 						puntosTodos.add(puntos);  
 						System.out.println ("");
 					}
-					
+					int[] puntosTodos = new int[]{10, 22, 45, 6, 7, 25};
+					int[][] ranked = new int[puntosTodos.length][2];
+					for(int i=0; i < puntosTodos.length; i++)
+					    ranked[i][0] = puntosTodos[i];
+					Arrays.sort(puntosTodos);
+
+					for(int i=0; i < puntosTodos.length; i++)
+					    for(int n=0; n < puntosTodos.length; n++)
+					        if(ranked[n][0] == puntosTodos[i] && ranked[n][1] == 0) 
+					            ranked[n][1] = puntosTodos.length-i;
+					/* Result
+					10 # 4
+					22 # 3
+					45 # 1
+					6 # 6
+					7 # 5
+					25 # 2
+					*/
 				}
 				
 				

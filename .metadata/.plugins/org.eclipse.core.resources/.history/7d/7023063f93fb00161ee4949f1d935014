@@ -1,0 +1,117 @@
+package matrices;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class pruebas {
+	public static void main(String[] args) {
+		try {
+
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			int opt=0;
+			int pass=0;
+			int [][] avengers = new int[4][5];
+			ArrayList<String> nombres = new ArrayList<String>();
+			nombres.add("Capitán América");
+			nombres.add("Iron Man");
+			nombres.add("Viuda Negra");
+			nombres.add("Thor");
+			ArrayList<String> habilidades = new ArrayList<String>();
+			habilidades.add("Fuerza");
+			habilidades.add("Inteligencia");
+			habilidades.add("Velocidad");
+			habilidades.add("Intuición");
+			habilidades.add("Inmortalidad");
+			double puntos=0;
+			double []puntosTodos = new double [4];
+			double[] operacion= {0.3, 0.3, 0.2, 0.1, 0.1};
+			
+			while (opt!=5){
+				
+				System.out.println();
+				System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+				System.out.println("===============================================================");
+				System.out.println("1. Registrar datos aleatorios");
+				System.out.println("2. Evaluar el más superhéroe");
+				System.out.println("3. Analizar misiones");
+				System.out.println("4. Reponer habilidades");
+				System.out.println("5. Salir");
+				System.out.println();
+				opt= Integer.parseInt(buffer.readLine());
+				
+				if (opt==5) System.out.println("El mundo sigue a salvo con nosotros, aunque seamos menos");
+				
+				if (opt>5 || opt<=0) {
+					System.out.println("Error. Opción no válida");
+					System.out.println();
+				}
+				
+				if (opt==1){
+					while (pass!=1234){
+						System.out.println("Introduce la contraseña supersecreta:");
+						pass= Integer.parseInt(buffer.readLine());
+					}
+					
+					for (int x=0;x<avengers.length;x++){
+						System.out.println(nombres.get(x)+":"); //esto se utiliza para los arraylist NO sirve para los array normales
+						for (int j = 0; j < avengers[x].length; j++) {
+							avengers [x][j] = (int) (Math.random()*10);
+							//System.out.print ("En la posición " + x + " " + j + " has introducido " + avengers[x][j]);
+						  
+							System.out.println(habilidades.get(j)+": " + avengers[x][j]);
+						} 
+						  
+						System.out.println ("");
+					}
+				}
+				
+				if (opt==2){
+					//esto se podría hacer arriba, en el mismo bucle, pero mejor así para entenderlo más adelante
+					for (int x=0;x<avengers.length;x++){
+						for (int j = 0; j < avengers[x].length; j++) {
+							//System.out.print ("En la posición " + x + " " + j + " has introducido " + avengers[x][j]);
+							System.out.println("PUNTOS: "+puntos);
+							System.out.println("OPERACION: "+ operacion[j]);
+							puntos=puntos+(avengers[x][j]*operacion[j]);
+							System.out.println("PUNTOS A COMPROBAR: "+puntos);
+						} 
+						puntosTodos[x]=puntos;  
+						System.out.println(nombres.get(x)+":"+puntosTodos[x]+" puntos");
+						System.out.println ("");
+					}
+					
+					/*double[][] ranked = new double[puntosTodos.length][2];
+					for(int i=0; i < puntosTodos.length; i++)
+					    ranked[i][0] = puntosTodos[i];
+					Arrays.sort(puntosTodos);
+
+					for(int i=0; i < puntosTodos.length; i++)
+					    for(int n=0; n < puntosTodos.length; n++)
+					        if(ranked[n][0] == puntosTodos[i] && ranked[n][1] == 0) 
+					            ranked[n][1] = puntosTodos.length-i;
+					/* Result
+					10 # 4
+					22 # 3
+					45 # 1
+					6 # 6
+					7 # 5
+					25 # 2
+					*/
+					/*for (int i = 0; i < ranked.length; i++) { //número de filas
+						 for (int j = 0; j < ranked[i].length; j++) { //número de columnas de cada fila
+						 System.out.print(ranked[i][j] + " ");
+						 }
+						 System.out.println();
+						}*/
+				}
+				
+				
+			}
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}

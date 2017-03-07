@@ -1,0 +1,10 @@
+//Diseñar un programa que tenga un método cuyos parámetros sean dos números, y que calcule el máximo.
+
+public class Ex03 {
+	
+	static void maximo(int max, int min){
+		if(max>min)	System.out.println(max + "es mayor que " + min);
+		}
+	}
+
+}

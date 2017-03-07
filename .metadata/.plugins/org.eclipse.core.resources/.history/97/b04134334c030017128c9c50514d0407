@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Ex06 {
+
+	public static void main(String[] args) {
+		try {
+
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			int n, m;
+			System.out.println("Número de comerciales a introducir:");
+			n = Integer.parseInt(buffer.readLine());
+			System.out.println("Número de productos a introducir:");
+			m = Integer.parseInt(buffer.readLine());
+			
+			int[][] ventasMatriz = new int[n][m];
+			
+			for (int x = 0; x < ventasMatriz.length; x++) {
+				for (int j = 0; j < ventasMatriz[x].length; j++) {
+					ventasMatriz[x][j] = (int) (Math.random() * 10);
+					System.out.print ("En la posición " + x + " " + j + " has introducido " + ventasMatriz[x][j]);
+				}
+			}
+			
+			
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}

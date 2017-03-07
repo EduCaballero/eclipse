@@ -1,0 +1,131 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Ex06 {
+	
+	public void sumar(int [][] recorrer){
+		int suma=0;
+		for (int x = 0; x < recorrer.length; x++) { 
+			suma=0;
+			for (int j = 0; j < recorrer[x].length; j++) {
+				suma= suma + recorrer[x][j];
+			}
+			System.out.println("El comercial "+x+" ha vendido: "+suma);
+		}
+	}
+	
+	//---------------------
+	
+	public void obtenerTotalProducto(int k[][]) {
+		int sumacolumnas = 0;
+		int fila=k.length;
+		int columnas=k[0].length;		
+			/*recorro las columnas*/        
+		for (int j = 0; j < columnas; j++) {
+			sumacolumnas = 0;            /*recorro las filas*/
+			for (int i = 0; i < fila;i++) { /*ahora se en que fila y columna estoy, sumo toda la columna*/
+				sumacolumnas = sumacolumnas + k[i][j];
+				}
+			System.out.println(sumacolumnas);
+			}
+		}
+	
+	//--------------------------
+	
+	public void sumarProductos(int [][] recorrer){
+		int suma=0;
+		for (int x = 0; x < recorrer[0].length; x++) { 
+			suma=0;
+			for (int j = 0; j < recorrer.length; j++) {
+				suma= suma + recorrer[j][x];
+			}
+			System.out.println("El producto "+x+" ha vendido: "+suma);
+		}
+	}
+	
+	
+	public void max(int [][] recorrer){
+		int suma=0;
+		int max=0;
+		int comercial=0;
+		for (int x = 0; x < recorrer.length; x++) { 
+			suma=0;
+			for (int j = 0; j < recorrer[x].length; j++) {
+				suma= suma + recorrer[x][j];
+			}
+			if(suma>max){
+				comercial=x;
+				max=suma;
+			}
+		}
+		System.out.println("El comercial que más ha vendido es "+comercial+" con "+max+" unidades");
+	}
+	
+	public void producto(int [][] recorrer){
+		int suma=0;
+		for (int x = 0; x < recorrer.length; x++) { 
+			suma=0;
+			for (int j = 0; j < recorrer[x].length; j++) {
+				suma= suma + recorrer[x][j];
+			}
+			System.out.println("El comercial "+x+" ha vendido: "+suma);
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		
+		try {
+
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			int n, m;
+			int opt = 0;
+			System.out.println("Número de comerciales a introducir:");
+			n = Integer.parseInt(buffer.readLine());
+			System.out.println("Número de productos a introducir:");
+			m = Integer.parseInt(buffer.readLine());
+
+			int[][] ventasMatriz = new int[n][m];
+
+			for (int x = 0; x < ventasMatriz.length; x++) { // con esto recorro la matriz llenándola de números random
+				for (int j = 0; j < ventasMatriz[x].length; j++) {
+					ventasMatriz[x][j] = (int) (Math.random() * 10);
+					// System.out.print ("En la posición " + x + " " + j + " has introducido " + ventasMatriz[x][j]);
+				}
+				// System.out.println(""); // este y el de arriba sólo los utilizo para comprobar que random mete los números bien
+			}
+
+			while (opt != 5) {
+
+				System.out.println();
+				System.out.println("Pulsa el número correspondiente para seleccionar la opción:");
+				System.out.println("===============================================================");
+				System.out.println("1. Ventas totales de cada comercial");
+				System.out.println("2. Ventas totales de cada producto");
+				System.out.println("3. Comercial que más ha vendido");
+				System.out.println("4. Producto menos vendido");
+				System.out.println("5. Salir");
+				System.out.println();
+				opt = Integer.parseInt(buffer.readLine());
+
+				if (opt == 5)
+					System.out.println("Adeu!");
+
+				if (opt > 5 || opt <= 0) {
+					System.out.println("Error. Opción no válida");
+					System.out.println();
+				}
+				
+				if (opt==1){
+					
+				}
+
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}

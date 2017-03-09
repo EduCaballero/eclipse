@@ -1,9 +1,0 @@
-//Diseñar un programa que tenga un método cuyos parámetros sean tres números, y que calcule el máximo.
-
-public class Ex04 {
-	
-	static void maximo(int a, int b, int c) {
-		Math.max(a, Math.max(b,c));
-	}
-
-}

@@ -1,0 +1,100 @@
+class persona{
+
+	//Atributos nombre, edad, DNI, sexo (H hombre, M mujer), peso y altura. N
+	private String dni;
+	private String nombre="";
+	private int edad=0;
+	private char sexo='H';
+	private double peso=0;
+	private double altura=0;
+
+	// Constructores
+
+	// Constructor vacío
+	public persona(){
+
+	}
+
+	// Constructor con parámetros
+	public persona(String nombre, int edad, char sexo, double peso, double altura){
+		this.setNombre(nombre);
+		this.setEdad(edad);
+		this.setSexo(sexo);
+		this.setPeso(peso);
+		this.setAltura(altura);
+		
+	}
+
+
+	//Setters
+
+	
+	public void setNombre(String nombreNuevo){
+		this.nombre = nombreNuevo;
+	}
+	public void setEdad(int edad){
+		this.edad = edad;
+	}
+	public void setSexo(char sexo){
+		this.sexo = sexo;
+	}
+	
+	public void setPeso(double peso){
+		this.peso=peso;
+	}
+	
+	public void setAltura(double altura){
+		this.altura=altura;
+	}
+
+	//Getters
+	//(int dniNuevo, String nombre, int edad, String sexo, double peso, double altura)
+
+	public String getDni(){
+		return this.dni;
+	}
+	public String getNombre(){
+		return this.nombre;
+	}
+	public int getEdad(){
+		return this.edad;
+	}
+	public char getSexo(){
+		return this.sexo;
+	}
+	public double getPeso(){
+		return this.peso;
+	}
+	public double getAltura(){
+		return this.altura;
+	}
+
+	//Otros metodos de la clase
+	
+	public void generarDni(){
+		int x=(int) (99999999*Math.random()+10000000);
+		char letra = generaLetra(x);
+		this.dni = Integer.toString(x)+ letra;
+	}
+
+	public char generaLetra(int dni){
+
+		String juegoCaracteres="TRWAGMYFPDXBNJZSQVHLCKE";
+		int modulo= dni % 23;
+		char letra = juegoCaracteres.charAt(modulo);
+		return letra; 
+	}
+
+	public String mostrarInfo(){
+		return ("El nombre es " + this.nombre + " y el DNI es " + this.dni);
+				
+	}
+	
+	/*calcularIMC(): calculará si la persona está en su peso ideal (peso en kg/(altura^2
+	en m)), devuelve un -1 si está por debajo de su peso ideal, un 0 si está en su peso
+	ideal y un 1 si tiene sobrepeso.*/
+	
+	
+	
+	
+}

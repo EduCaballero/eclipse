@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class PasswordApp {
+	public static void main(String[] args) {
+		try {
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			int tamanyo=0;
+			int longitud=0;
+			int[] contrasenyas = new int[tamanyo];
+			int[] esFuerte = new int[tamanyo];
+			
+			
+			System.out.println("Indica el tamaño del array password");
+			tamanyo = Integer.parseInt(buffer.readLine());
+			System.out.println("Indica la longitud de los password");
+			longitud = Integer.parseInt(buffer.readLine());
+			
+			for (int i=0;i>contrasenyas.length;i++){
+				contrasenyas[i]=(int) (Math.random() * 10);
+			}
+			
+			
+			
+
+		} catch (Exception e) {
+			System.out.println("Error al introducir los números " + e);
+		}
+
+	}
+
+}

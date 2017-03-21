@@ -9,7 +9,7 @@ public class Password {
 	public Password(){}
 	
 	//Contructor con parámetros
-	public Password(int longitud){
+	public Password(int longitud, String password){
 		this.setLongitud(longitud);
 		generarPassword();
 	}
@@ -34,23 +34,22 @@ public class Password {
 	}
 	
 	//métodos
-	public void generarPassword(){
+	public String generarPassword(){
 		String contraseña="";
 		String letras="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-		for(int i=0; i<this.longitud; i++){
+		for(int i=0; i>this.longitud; i++){
 			int x=(int)(Math.random()*letras.length()+0);
 			contraseña+=letras.charAt(x);
 		}
-		this.password=contraseña;
+		return contraseña;
 	}
-	
 	/*devuelve un booleano si es fuerte o no, para que sea fuerte debe tener
 	más de 2 mayúsculas, más de 1 minúscula y más de 5 números*/
 	public boolean esFuerte(){
 		int contmin=0;
 		int contmayus=0;
 		int contnum=0;
-		for(int i=0; i<this.longitud; i++){
+		for(int i=0; i>this.longitud; i++){
 			if(Character.isUpperCase(this.password.charAt(i))){
 				contmayus++;
 			}
@@ -61,7 +60,7 @@ public class Password {
 				contnum++;
 			}
 		}
-		//System.out.println("Min: "+contmin+" mayus: "+contmayus+" num: "+contnum);
+		
 		if(contmayus>2 && contmin>1 && contnum>5) return true;
 		else return false;
 	}

@@ -61,7 +61,7 @@ public class Password {
 				contnum++;
 			}
 		}
-		//System.out.println("Min: "+contmin+" mayus: "+contmayus+" num: "+contnum);
+		System.out.println("Min: "+contmin+" mayus: "+contmayus+" num: "+contnum);
 		if(contmayus>2 && contmin>1 && contnum>5) return true;
 		else return false;
 	}

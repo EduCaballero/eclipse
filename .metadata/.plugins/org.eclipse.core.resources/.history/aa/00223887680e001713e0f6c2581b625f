@@ -21,7 +21,6 @@ public class PasswordApp {
 			for (int i=0;i<contrasenyas.length;i++){
 				Password p1 = new Password(longitud);
 				contrasenyas[i] = p1;
-				esFuerte[i]=p1.esFuerte();
 				System.out.println("La contraseña es "+contrasenyas[i].getPassword()+" .esFuerte? "+esFuerte[i]);
 			}
 			
@@ -31,14 +30,20 @@ public class PasswordApp {
 		} catch (Exception e) {
 			System.out.println("Error al introducir los números " + e);
 		}
-	}
-}
 
-/*	System.out.println(i);
-	contrasenyas[i] = new Password();
-	contrasenyas[i].setLongitud(longitud);
-	contrasenyas[i].generarPassword();
-	contrasenyas[i].esFuerte();
-			
-	System.out.println("La contraseña en la posición "+i+" es: " + contrasenyas[i].getPassword());
-	System.out.println("esFuerte: "+esFuerte[i]);*/
+	}
+
+}
+/*				System.out.println(i);
+				contrasenyas[i] = new Password();
+				contrasenyas[i].setLongitud(longitud);
+				contrasenyas[i].generarPassword();
+				contrasenyas[i].esFuerte();
+				if(contrasenyas[i].esFuerte()==true){
+					esFuerte[i]=true;
+				}
+				else{
+					esFuerte[i]=false;
+				}
+				System.out.println("La contraseña en la posición "+i+" es: " + contrasenyas[i].getPassword());
+				System.out.println("esFuerte: "+esFuerte[i]);*/

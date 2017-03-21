@@ -7,22 +7,20 @@ public class PasswordApp {
 			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 			int tamanyo=0;
 			int longitud=0;
+			Password[] contrasenyas = new Password[tamanyo];
+			int[] esFuerte = new int[tamanyo];
 			
 			
 			System.out.println("Indica el tamaño del array password");
 			tamanyo = Integer.parseInt(buffer.readLine());
-			Password[] contrasenyas = new Password[tamanyo];
-			boolean[] esFuerte = new boolean[tamanyo];
-			
 			System.out.println("Indica la longitud de los password");
 			longitud = Integer.parseInt(buffer.readLine());
 			
 			
-			for (int i=0;i<contrasenyas.length;i++){
-				Password p1 = new Password(longitud);
+			for (int i=0;i>contrasenyas.length;i++){
+				Password p1 = new Password();
+				p1.setLongitud(15);
 				contrasenyas[i] = p1;
-				esFuerte[i]=p1.esFuerte();
-				System.out.println("La contraseña es "+contrasenyas[i].getPassword()+" .esFuerte? "+esFuerte[i]);
 			}
 			
 			
@@ -31,14 +29,7 @@ public class PasswordApp {
 		} catch (Exception e) {
 			System.out.println("Error al introducir los números " + e);
 		}
-	}
-}
 
-/*	System.out.println(i);
-	contrasenyas[i] = new Password();
-	contrasenyas[i].setLongitud(longitud);
-	contrasenyas[i].generarPassword();
-	contrasenyas[i].esFuerte();
-			
-	System.out.println("La contraseña en la posición "+i+" es: " + contrasenyas[i].getPassword());
-	System.out.println("esFuerte: "+esFuerte[i]);*/
+	}
+
+}

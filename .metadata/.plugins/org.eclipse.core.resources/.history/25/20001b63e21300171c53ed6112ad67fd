@@ -1,0 +1,19 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class restaurantApp {
+	public static void main(String[] args) {
+		try {
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			/*	Exercise 3
+				(In the same Java Project) Create another class containing the “main” method.
+				In this “main class”, create 5 objects of the class Menu, as defined in the table below. */
+			
+			
+
+		} catch (Exception e) {
+			System.out.println("Error al introducir los números " + e);
+		}
+	}
+}

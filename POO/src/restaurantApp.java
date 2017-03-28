@@ -1,0 +1,84 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class restaurantApp {
+	public static void main(String[] args) {
+		try {
+			BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+			
+			/*	Exercise 3
+				(In the same Java Project) Create another class containing the “main” method.
+				In this “main class”, create 5 objects of the class Menu, as defined in the table below. */
+			
+			//(String name, double kcal, int cookingTime, double price, double wine)
+			restaurant menu1 = new restaurant("menuGuay", 400, 20, 10.5, 1);
+			restaurant menu2=new restaurant("menuChachi", 500, 30, 14.99, 0.5);
+			restaurant menu3=new restaurant("menuChupi", 100, 45, 19.99, 0.5);
+			restaurant menu4=new restaurant("menuChuli", 1000, 60, 18.99, 1.5);
+			restaurant menu5=new restaurant("menuAwesome", 4000, 80, 39.99, 2.5);
+			
+			/*	Exercise 4
+				In your “main class” create an array of length 5, and store the 5 objects (Exercise 3) into
+				the array. You can use any name for your array.
+				From the array, use a loop to print the details of all the objects using the method you
+				defined in Exercise 2. An example output: 
+				*/
+			
+			//Creo el array restaurentes con los menus
+			restaurant[]menus=new restaurant[5];
+			
+			//meto los datos a cada posición
+			menus[0]=menu1;
+			menus[1]=menu2;
+			menus[2]=menu3;
+			menus[3]=menu4;
+			menus[4]=menu5;
+			
+			//TODO ESTO DE ARRIBA lo podríamos ahorrar haciendo
+			
+			//restaurant[]menus= {menu1, menu2, menu3, menu4, menu5};
+			
+			for(int i=0; i<menus.length;i++){
+				menus[i].detailMenu(); // de esta forma llamo al método creado en restaurant.java y saco los datos del menu array restaurant (cada menú)
+			}
+			
+			/*	Exercise 5
+				Use another loop to print only the name and cooking time of all the dishes that take less
+				than 30 minutes to cook.
+				Hint: you may use the getter methods for the name and cooking time attributes, and
+				then, print these values (name, cooking time). An example output is shown below.
+				“Metworst” and “Kibbeling” correspond to the names, while 12 and 23 correspond to the
+				cooking time. */
+			System.out.println();
+			System.out.println("--------------------------------------------------------------");
+			
+			for(int i=0; i<menus.length;i++){
+				System.out.println(menus[i].getName()+" se cocina en "+menus[i].getCookingTime());				
+			}
+			
+			/*	Exercise 6
+				Use another loop to calculate and print the total price of all the objects (in the array).
+				Example output:	*/
+			System.out.println();
+			System.out.println("--------------------------------------------------------------");
+			double totalPrice=0;
+			for(int i=0; i<menus.length;i++){
+				totalPrice+=menus[i].getPrice();				
+			}
+			System.out.println("El precio total es de "+ totalPrice);
+			
+			System.out.println();
+			/*	Calculate the total price of all the objects. If the price is more than 65, give a discount of
+				10% and print the total price and the discounted price. Example output: */
+			if (totalPrice>65)System.out.println("El precio con el 10% de descuento aplicado es de "+totalPrice/1.10);
+			
+			System.out.println();
+			System.out.println("--------------------------------------------------------------");
+			
+			
+
+		} catch (Exception e) {
+			System.out.println("Error al introducir los números " + e);
+		}
+	}
+}

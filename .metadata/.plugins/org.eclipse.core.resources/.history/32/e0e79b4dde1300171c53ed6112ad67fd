@@ -1,0 +1,50 @@
+
+public class restaurant {
+/*Menús identificados por nombre ej. “stamppot boerenkool”, cantidad de calorías del plato,
+ *  ej. 564.65 kcal, tiempo de cocinado estimado, j. 45 min (sólo valores integer),
+ *  el pecio por persona(double) ej. 20.5, y el número de botellas incluídas, ej. 0.5. */
+	
+	/*	-Define the attributes of the class, their types (e.g. String) and visibility.
+		-Add the constructor in the class
+		-Define the getter and setter methods for each of the attributes
+		-Pay attention to the Java naming conventions for classes and methods */
+	
+	//Atributos
+	private String name;
+	private double kcal;
+	private int cookingTime;
+	private double price;
+	private double wine;
+	
+	//constructor vacío
+	public restaurant(){}
+	
+	//Constructor con parámetros
+	
+	
+	
+	//Setters
+	public void setName(String name){
+		this.name=name;
+	}
+	
+	public void setKcal(double kcal){
+		this.kcal=kcal;
+	}
+	
+	public void setCookingTime(int cookingTime){
+		this.cookingTime=cookingTime;
+	}
+	
+	public void setPrice(double price){
+		this.price=price;
+	}
+	
+	
+	//Getters
+	
+	
+	
+	
+	
+}

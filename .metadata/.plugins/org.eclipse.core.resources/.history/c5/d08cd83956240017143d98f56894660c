@@ -1,0 +1,61 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+ 
+ 
+public class pruebas {
+    public static void main(String[] args) {
+ 
+        try{
+ 
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+ 
+            System.out.println("Longitud de la pista:");
+            int longitud = Integer.parseInt(buffer.readLine());
+            while (longitud <= 0){
+                System.out.println("La longitud no puede ser ni zero ni negativa.");
+                System.out.println("Longitud de la pista:");
+                longitud = Integer.parseInt(buffer.readLine());
+            }
+ 
+            System.out.println("Número de hormigas:");
+            int numHormiga = Integer.parseInt(buffer.readLine());
+            int [] posicionHormiga = new int [numHormiga]; 
+            int [] minHormiga = new int [numHormiga]; 
+            int [] maxHormiga = new int [numHormiga];
+            for(int i = 0; i < numHormiga; i++){
+                System.out.println("Posición de la hormiga numero " + (i+1) + ":");
+                posicionHormiga[i]= Integer.parseInt(buffer.readLine());
+                 
+                if (posicionHormiga[i] > longitud || posicionHormiga [i]< 1 ){
+                    System.out.println("La hormiga tiene que estar en una posición entre 1 y la longitud elegida.");
+                    posicionHormiga[i] = 0;
+                    i--;
+                }else {
+                    if (longitud - posicionHormiga[i] < posicionHormiga[i]-1 ){
+                        minHormiga[i] = longitud - posicionHormiga[i];
+                        maxHormiga[i] = posicionHormiga[i]-1;
+                    }else if(longitud - posicionHormiga[i] > posicionHormiga[i]-1 ){
+                        minHormiga[i] = posicionHormiga[i]-1;
+                        maxHormiga[i] = longitud - posicionHormiga[i];
+                    }
+                }
+            }
+ 
+            int max = 0;
+            int min = 0;
+            for(int i = 0; i < numHormiga; i++){
+                if (maxHormiga[i]> max){
+                    max = maxHormiga[i];
+                }
+                if (minHormiga[i]>min){
+                    min = minHormiga[i];
+                }
+            }
+            System.out.println("Mínimo: " +min);
+            System.out.println("Máximo: " +max);
+        }
+        catch (Exception e){
+            System.out.println("Error" +e);
+        }   
+    }
+}

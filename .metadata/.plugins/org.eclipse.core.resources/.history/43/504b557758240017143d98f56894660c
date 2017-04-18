@@ -1,0 +1,114 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class ex09 {
+	public static void main(String[] args) throws IOException {
+		int[][] matrix = new int[3][3];
+
+		int random = 0;
+		int puertaSelect = Integer.MAX_VALUE;
+
+		System.out.println("Juego de las 3 puertas");
+		System.out.println("---------NIVEL--------");
+		System.out.println("1-Facil");
+		System.out.println("2-Medio");
+		System.out.println("3-Dificil");
+		System.out.println("-----------------");
+
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+
+		System.out.println("Selecciona opcion");
+		String op = buffer.readLine();
+		int opcion = Integer.parseInt(op);
+
+		switch (opcion) {
+
+		case 1:
+
+			for (int i = 0; i < matrix.length; i++) {
+				puertaSelect = Integer.MAX_VALUE;
+				random = (int) (Math.random() * ((matrix.length - 1) - 0 + 1) + 0);
+				matrix[i][random] = 1;
+
+				while (puertaSelect != random) {
+					System.out.println("Nivel:" + i + " Selecciona una puerta del 0 al " + (matrix.length - 1));
+					String ps = buffer.readLine();
+					puertaSelect = Integer.parseInt(ps);
+					if (puertaSelect == random)
+						System.out.println("Puerta acertada");
+					else
+						System.out.println("Puerta incorrecta");
+				}
+
+			}
+			System.out.println(" ");
+			System.out.println("Enhorabuena has salido");
+
+			break;
+
+		case 2:
+
+			ArrayList<Integer> puertas = new ArrayList<Integer>();
+
+			for (int i = 0; i < matrix.length; i++) {
+				puertas.add(i, (int) (Math.random() * ((matrix.length - 1) - 0 + 1) + 0));
+			}
+
+			int i = 0;
+
+			while (i < matrix.length) {
+				System.out.println("Nivel:" + i + " Selecciona una puerta del 0 al " + (matrix.length - 1));
+				String ps = buffer.readLine();
+				puertaSelect = Integer.parseInt(ps);
+				if (puertaSelect == puertas.get(i)) {
+					System.out.println("Puerta acertada");
+					i++;
+				} else {
+					System.out.println("Puerta incorrecta");
+					if (i > 0)
+						i--;
+				}
+			}
+
+			System.out.println(" ");
+			System.out.println("Enhorabuena has salido");
+
+			break;
+
+		case 3:
+
+			int j = 0;
+			int vidas = 7;
+			int random2 = 0;
+
+			while (j < matrix.length && vidas > 0) {
+				System.out.println(
+						"Nivel:" + j + ", Selecciona una puerta del 0 al " + (matrix.length - 1) + ", Vidas:" + vidas);
+				String ps = buffer.readLine();
+				puertaSelect = Integer.parseInt(ps);
+				random2 = (int) (Math.random() * ((matrix.length - 1) - 0 + 1) + 0);
+				if (puertaSelect == random2) {
+					System.out.println("Puerta acertada");
+					j++;
+				} else {
+					System.out.println("Puerta incorrecta");
+					if (j > 0)
+						j--;
+					vidas--;
+				}
+
+			}
+
+			if (vidas == 0)
+				System.out.println("Te has quedado sin vidas");
+			else
+				System.out.println("Enhorabuena has salido");
+
+			break;
+
+		}
+
+	}
+}

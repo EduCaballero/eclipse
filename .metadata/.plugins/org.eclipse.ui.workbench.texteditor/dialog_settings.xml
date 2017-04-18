@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="anchoV" key="selection"/>
+		<item value="matriz" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="matrix"/>
 			<item value="ampleV"/>
 			<item value="ampleH"/>
 			<item value="array1"/>
@@ -15,9 +16,9 @@
 			<item value="diamax"/>
 			<item value="set"/>
 			<item value="productividadsumar=(horasProd.get(i)-8)+1;"/>
-			<item value="salcons"/>
 		</list>
 		<list key="replacehistory">
+			<item value="matriz"/>
 			<item value="anchoV"/>
 			<item value="anchoH"/>
 			<item value="puntosTodos"/>
@@ -25,7 +26,6 @@
 			<item value="salcons"/>
 			<item value="caloriascons"/>
 			<item value="frutacons"/>
-			<item value="secondarray"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="matriz" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="da"/>
 			<item value="matrix"/>
 			<item value="ampleV"/>
 			<item value="ampleH"/>
@@ -15,7 +16,6 @@
 			<item value="import java.io.BufferedReader;"/>
 			<item value="diamax"/>
 			<item value="set"/>
-			<item value="productividadsumar=(horasProd.get(i)-8)+1;"/>
 		</list>
 		<list key="replacehistory">
 			<item value="matriz"/>

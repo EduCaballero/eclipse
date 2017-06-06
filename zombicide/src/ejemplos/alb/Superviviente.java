@@ -1,0 +1,82 @@
+package ejemplos.alb;
+
+
+public class Superviviente {
+    private int vidas;
+    private int nivel;
+    private String nombre;
+    private SkillsPersonaje skill;
+    private Arma arma;
+
+
+    public Superviviente() {
+        this(3, 0, "unknow name", SkillsPersonaje.RAPIDO);
+    }
+
+    public Superviviente(int vidas, int nivel, String nombre, SkillsPersonaje skill) {
+        this.vidas = vidas;
+        this.nivel = nivel;
+        this.nombre = nombre;
+        this.skill = skill;
+        this.arma = new Arma();
+    }
+
+    //mostrar informacion superviviente
+    public void showInfoSuper(){
+        System.out.println("Nombre : "+nombre);
+        System.out.println("Vidas : "+vidas);
+        System.out.println("Nivel : "+nivel);
+        System.out.println("Skills : "+skill);
+        System.out.println("Arma : "+arma.getTipo());
+        System.out.println("       Daño :  "+arma.getDanyo());
+        System.out.println("       Distancia : "+arma.getDistancia());
+    }
+
+    //retorna true si tiene arma
+    public boolean tieneArma(){
+        if(this.arma != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public void deleteArma(){
+        this.arma = null;
+    }
+    //getter
+    public int getVidas() {
+        return vidas;
+    }
+    public int getNivel() {
+        return nivel;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public SkillsPersonaje getSkill() {
+        return skill;
+    }
+    public Arma getArma() {
+        return arma;
+    }
+
+    //setter
+    public void setVidas(int vidas) {
+        this.vidas = vidas;
+    }
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setSkill(SkillsPersonaje skill) {
+        this.skill = skill;
+    }
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
+
+}
+
+

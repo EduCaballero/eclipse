@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+
+/**
+ * Created by Albert Dam1T1 Stucom on 22/05/2017.
+ */
+public class main {
+    public static void main (String[] args){
+        //creamos el equipo de supervivientes
+        ArrayList<Superviviente> Equipo = new ArrayList<Superviviente>();
+        Equipo.add(new Superviviente(5,0,"Albert",SkillsPersonaje.FORTACHON));
+        Equipo.add(new Superviviente(5,0,"Chen",SkillsPersonaje.RAPIDO));
+        Equipo.add(new Superviviente(5,0,"juan",SkillsPersonaje.ESCURRIDIZO));
+        Equipo.add(new Superviviente(5,0,"Alejandro",SkillsPersonaje.BUSCADOR));
+        Equipo.add(new Superviviente(5,0,"Javi",SkillsPersonaje.AMBIDIESTRO));
+
+        //Creamos 3 armas
+        Arma escopeta = new Arma(7, 2, TipoArma.ESCOPETA);
+        Arma pistola = new Arma(3, 1, TipoArma.PISTOLA);
+        Arma katana = new Arma(4, 0, TipoArma.KATANA);
+
+        //otorgamos las armas
+
+        Equipo.get(2).setArma(escopeta);
+        Equipo.get(4).setArma(pistola);
+        Equipo.get(3).setArma(katana);
+        ArrayList<Zombie> zombies = new ArrayList<Zombie>();
+        zombies.add(new Zombie(2 , 3, TipoZombie.CAMINANTE, "Alpha", 5));
+        zombies.add(new Zombie(3 , 2, TipoZombie.HUNTER, "Alpha", 6));
+        zombies.add(new Zombie(3 , 1, TipoZombie.BOOMER, "Alpha", 3));
+        zombies.add(new Zombie(2 , 3, TipoZombie.HUNTER, "Alpha", 7));
+        zombies.add(new Zombie(5 , 1, TipoZombie.TANK, "Alpha", 10));
+
+        for (Superviviente elemento : Equipo) {
+            elemento.showInfoSuper();
+            System.out.println();
+        }
+        for (Zombie elemento:zombies) {
+            elemento.showInfoZombie();
+            System.out.println();
+        }
+
+    }
+}

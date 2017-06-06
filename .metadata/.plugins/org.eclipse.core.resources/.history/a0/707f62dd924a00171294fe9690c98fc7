@@ -1,0 +1,8 @@
+/**
+ * Created by Albert Dam1T1 Stucom on 22/05/2017.
+ */
+public enum TipoZombie {
+    CAMINANTE,
+    GORDO,
+    WITCH
+}

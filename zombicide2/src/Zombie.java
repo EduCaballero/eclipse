@@ -48,13 +48,13 @@ public class Zombie {
 
     //mostrar informacion Zombie
     public void showInfoZombie(){
+    	System.out.println("TipoZombie : "+tipo);
         System.out.println("Danyo : "+dano);
         System.out.println("Vida : "+vida);
-        System.out.println("TipoZombie : "+tipo);
-        /*
         System.out.println("Movimiento : "+movimiento);
         System.out.println("Horda : "+horda.getNombre());
-        System.out.println("       Respawn :  "+horda.getRespawn());
-*/
+        System.out.println("Respawn :  "+horda.getRespawn());
+        System.out.println("");
+
     }
 }

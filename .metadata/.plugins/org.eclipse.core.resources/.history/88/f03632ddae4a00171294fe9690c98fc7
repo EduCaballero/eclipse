@@ -1,0 +1,38 @@
+
+public class pruebas {
+	 public static void main(String[] args) {
+
+		 Superviviente[] Equipo = new Superviviente[5];
+		 Equipo[0] = new Superviviente(3, 0, "user1", SkillsPersonaje.FORTACHON);
+	     Equipo[1] = new Superviviente(3, 0, "user2", SkillsPersonaje.RAPIDO);
+	     Equipo[2] = new Superviviente(3, 0, "user3", SkillsPersonaje.ESCURRIDIZO);
+	     Equipo[3] = new Superviviente(3, 0, "user4", SkillsPersonaje.BUSCADOR);
+	     Equipo[4] = new Superviviente(3, 0, "user5", SkillsPersonaje.AMBIDIESTRO);
+	     
+	     
+	     for (Superviviente a:Equipo) {
+	            a.bonificacionSkill();
+	            a.showInfoSuper2();
+	        }
+	     
+	     int numeroZombiesPorPlanta=8;
+	     System.out.println();
+	     System.out.println("----------");
+	     Zombie[] planta1 = new Zombie[numeroZombiesPorPlanta];
+	        for (int i = 0; i < numeroZombiesPorPlanta; i++) {
+	            planta1[i] = new Zombie(1, 1, 1, TipoZombie.CAMINANTE, "planta1", 5);
+	        }
+	        
+	        for (Zombie a:planta1) {
+	            a.showInfoZombie();
+	        }
+	        
+	        //for (int i = 0; i < numeroZombiesPorPlanta; i++) {
+	            //if (i % 4 == 0) {
+	        
+	        for (int i=0; i<8;i++){
+	        	System.out.println(i % 3);
+	        }
+
+	}
+}

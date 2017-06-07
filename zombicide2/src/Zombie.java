@@ -1,4 +1,4 @@
-
+//AQUÍ ZOMBIE
 public class Zombie {
     private int dano;
     private int vida;
@@ -46,14 +46,14 @@ public class Zombie {
         this.horda = horda;
     }
 
-    //mostrar informacion Zombie
+    //INFO ZOMBIE
     public void showInfoZombie(){
-    	System.out.println("TipoZombie : "+tipo);
+    	System.out.println("Tipo de Zombie : "+tipo);
         System.out.println("Danyo : "+dano);
         System.out.println("Vida : "+vida);
         System.out.println("Movimiento : "+movimiento);
         System.out.println("Horda : "+horda.getNombre());
-        System.out.println("Respawn :  "+horda.getRespawn());
+        //System.out.println("Respawn : "+horda.getRespawn()); AL FINAL NO LO USAMOS
         System.out.println("");
 
     }

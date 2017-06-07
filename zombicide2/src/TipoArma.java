@@ -1,6 +1,4 @@
-/**
- * Created by Albert Dam1T1 Stucom on 18/05/2017.
- */
+//Aquí enumeramos los distintos tipos de arma que podemos usar
 public enum TipoArma {
     SARTEN,
     PISTOLA,

@@ -1,0 +1,8 @@
+//Tipos de skills para el personaje
+public enum SkillsPersonaje {
+    RAPIDO,
+    BUSCADOR,
+    FORTACHON,
+    ESCURRIDIZO,
+    AMBIDIESTRO
+}

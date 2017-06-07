@@ -1,6 +1,4 @@
-/**
- * Created by Albert Dam1T1 Stucom on 18/05/2017.
- */
+//TIPOS DE SKILLS PARA LOS SUP
 public enum SkillsPersonaje {
     RAPIDO,
     BUSCADOR,

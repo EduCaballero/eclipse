@@ -1,35 +1,34 @@
-/**
- * Created by Raikish-sempai on 22/05/2017.
- * GitHub -> github.com/amcgamer/
- */
+//HORDA
 public class Horda {
     private String nombre;
     private int respawn;
-    private int newRespawn = respawn;
+    private int newRespawn = respawn; //AL FINAL NO SE UTILIZA PARA NADA
 
-    //Constructor
     public Horda(String nombre, int respawn) {
         this.nombre = nombre;
         this.respawn = respawn;
         caminar();
     }
 
-    //Getter
+    //GETTERS
     public String getNombre() {
         return nombre;
     }
     public int getRespawn() {
         return respawn;
     }
-    //Setter
+    
+    
+    //SETTERS
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
     public void setRespawn(int respawn) {
         this.respawn = respawn;
     }
-    //Methods
-
+    
+    
+    //MÉTODOS QUE SE IBAN A IMPLEMENTAR
     public void caminar(){
         respawn--;
         if(respawn == 0){
@@ -42,7 +41,7 @@ public class Horda {
         resetRespawn();
     }
 
-    public void resetRespawn(){
+    public void resetRespawn(){ //NO SE USA
         respawn = newRespawn;
     }
 

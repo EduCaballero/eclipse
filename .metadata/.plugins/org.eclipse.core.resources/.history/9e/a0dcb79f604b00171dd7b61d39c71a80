@@ -1,0 +1,136 @@
+//Creamos los supervivientes
+public class Superviviente {
+    private int vidas;
+    private int nivel;
+    private String nombre;
+    private SkillsPersonaje skill;
+    private Arma arma;
+    private boolean puedoEscapar;
+
+
+//Superviviente base que pide la pr�ctica
+    public Superviviente() {
+        this(3, 0, "desconocido", SkillsPersonaje.RAPIDO);
+    }
+
+    public Superviviente(int vidas, int nivel, String nombre, SkillsPersonaje skill) {
+        this.vidas = vidas;
+        this.nivel = nivel;
+        this.nombre = nombre;
+        this.skill = skill;
+        this.puedoEscapar = false;
+        this.arma = new Arma();
+    }
+
+    // TODO: hacer que un escurridizo regenere la habilidad puedoEscapar cada planta
+        public void resetPuedoEscapar (){
+        if(skill == SkillsPersonaje.ESCURRIDIZO){
+            puedoEscapar = true;
+        }
+    }
+
+
+    //metodo que devuelve  la bonificacion que le toca al usuario por su skill.
+    public void bonificacionSkill(){
+        switch (this.skill) {
+            case RAPIDO:
+                arma.setDanyo(2);
+            break;
+            case BUSCADOR:
+                arma.setDanyo(2);
+                arma.setDistancia(1);
+                arma.setTipo(TipoArma.KATANA);
+                break;
+            case FORTACHON:
+                vidas ++;
+                break;
+            case ESCURRIDIZO:
+                puedoEscapar = true;
+                break;
+            case AMBIDIESTRO:
+                if (arma.getTipo() == TipoArma.PISTOLA){
+                    arma.setAtaques(arma.getAtaques() * 2);
+                }
+        }
+    }
+
+
+    //mostrar informacion superviviente
+    public void showInfoSuper(){
+        System.out.println("Nombre : "+nombre);
+        System.out.println("Vidas : "+vidas);
+        /*
+        System.out.println("Nivel : "+nivel);
+        System.out.println("Skills : "+skill);
+        System.out.println("Arma : "+arma.getTipo());
+        System.out.println("       Daño :  "+arma.getDaño());
+        System.out.println("       Distancia : "+arma.getDistancia());
+        */
+    }
+    //mostrar informacion superviviente
+    public void showInfoSuper2(){
+        System.out.println("Nombre : "+nombre);
+        System.out.println("Vidas : "+vidas);
+        System.out.println("Skills : "+skill);
+        System.out.println("Arma : "+arma.getTipo());
+        System.out.println("       Danyo :  "+arma.getDanyo());
+        System.out.println("       Ataques : "+arma.getAtaques());
+    }
+
+    //retorna true si tiene arma
+    public boolean tieneArma(){
+        if(this.arma != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public void deleteArma(){
+        this.arma = null;
+    }
+
+
+    //getter
+    public int getVidas() {
+        return vidas;
+    }
+    public int getNivel() {
+        return nivel;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public SkillsPersonaje getSkill() {
+        return skill;
+    }
+    public Arma getArma() {
+        return arma;
+    }
+
+    public boolean getPuedoEscapar() {
+        return puedoEscapar;
+    }
+
+    //setter
+    public void setVidas(int vidas) {
+        this.vidas = vidas;
+    }
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setSkill(SkillsPersonaje skill) {
+        this.skill = skill;
+    }
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
+
+    public void setPuedoEscapar(boolean puedoEscapar) {
+        this.puedoEscapar = puedoEscapar;
+    }
+}
+
+

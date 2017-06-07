@@ -1,11 +1,11 @@
-
+//ARMAS
 public class Arma {
     private int danyo;
     private int distancia;
     private int ataques;
     private TipoArma tipo;
 
-    public Arma() {
+    public Arma() { //ARMA POR DEFECTO
         this(1, 1,TipoArma.SARTEN);
     }
 
@@ -22,17 +22,16 @@ public class Arma {
 
 
 
-    public void armarse(){
+    public void armarse(){ //GRITOS DE GUERRA
         System.out.println(
-                "¡Avanzad sin temor a la oscuridad!!!" +
-                "¡Luchad, luchad jinetes de Theoden!!!" +
-                "¡Caeran las lanzas, se quebraran los escudos. Aun restara la espada!!!" +
-                "¡Rojo sera el danyo, hasta el nacer del sol!!!"
+                "¡ARMADO 1 GRITO GUERRA!" +
+                "¡ARMADO 2 GRITO GUERRA!" +
+                "¡ARMADO 3 GRITO GUERRA!" +
+                "¡ARMADO 4 GRITO GUERRA!"
         );
     }
 
-    //setters && getters
-
+    //SETERS
     public void setAtaques(int ataques) {
         this.ataques = ataques;
     }
@@ -45,6 +44,8 @@ public class Arma {
     public void setTipo(TipoArma tipo) {
         this.tipo = tipo;
     }
+    
+    //GETTERS
     public int getDanyo() {
         return danyo;
     }

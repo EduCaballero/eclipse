@@ -1,0 +1,15 @@
+import javax.swing.JOptionPane;
+
+public class JOptionPanePruebas {
+
+	public static void main(String[] args) {
+		
+		//JOptionPane--------------------------------------
+		//Son estáticos, ergo no tendremos que crear un objeto con la clase JOptionPane, es decir, 
+		//no tendremos que instanciar la clase JOptionPane, si no que debemos utilizar el nombreDeLaClase.metodo
+				
+		String nombreUsuario=JOptionPane.showInputDialog("Introduce tu nombre, por favor:");
+
+	}
+
+}

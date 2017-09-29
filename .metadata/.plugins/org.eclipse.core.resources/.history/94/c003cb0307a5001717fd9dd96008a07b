@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class EntradaDatos {
+
+	public static void main(String[] args) {
+		
+		//Scanner -----------------------------------------
+		
+	//Los métodos de entrada de datos de Scanner no son estáticfos, ergo necesitamos haber creado previamente un objeto clase Scanner.
+		//Justo lo que hacemos aquí debajo
+
+		Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Introduce tu nombre:");
+		
+		//Y ahora ya podemos meter datos y almacenarlos.
+		String nombreUser=entrada.nextLine(); //necesitamos llamar al objeto "entrada", creado anteriormente, antes de nextLine().
+		
+		System.out.println("Introduce tu edad:");
+		
+		int edad=entrada.nextInt();//volvemos a llamar a objeto entrada y pedimos un introducir un Int
+		
+		System.out.println("Hola "+nombreUser+ ", el año que viene tendrás "+(edad+1)+" años");
+		
+		//JOptionPane--------------------------------------
+		//Son estáticos, ergo no tendremos que crear un objeto con la clase JOptionPane, es decir, 
+		//no tendremos que instanciar la clase JOptionPane, si no que debemos utilizar el nombreDeLaClase.metodo
+		
+		String nombreUser2=JOptionPane.showInputDialog("Introduce tu nombre, por favor:");
+		
+		String edad2=JOptionPane.showInputDialog("Introduce tu edad:");//no podemos pedir un Int porque devuelve un String, ergo tendremos que pasarlo luego
+		
+		System.out.println("Hola "+ nombreUser2+", tienes "+edad2+" años.");
+	}
+
+}

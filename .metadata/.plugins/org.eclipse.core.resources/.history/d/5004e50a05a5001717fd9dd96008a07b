@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class EntradaDatos {
+
+	public static void main(String[] args) {
+	//Los métodos de entrada de datos de Scanner no son estáticfos, ergo necesitamos haber creado previamente un objeto clase Scanner.
+		//Justo lo que hacemos aquí debajo
+
+		Scanner entrada=new Scanner(System.in);
+		
+		System.out.println("Introduce tu nombre:");
+		
+		//Y ahora ya podemos meter datos y almacenarlos.
+		String nombreUser=entrada.nextLine(); //necesitamos llamar al objeto "entrada", creado anteriormente, antes de nextLine().
+		
+		System.out.println("Introduce tu edad:");
+		
+		int edad=entrada.nextInt();//volvemos a llamar a objeto entrada y pedimos un introducir un Int
+		
+		System.out.println("Hola "+nombreUser+ ", el año que viene tendrás "+(edad+1)+" años");
+		
+	}
+
+}

@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="contadorSupMuertos" key="selection"/>
+		<item value="anyosZombie" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="anyosZombie"/>
 			<item value="contadorSuperMuertos"/>
 			<item value="miss"/>
 			<item value="daño"/>
@@ -15,7 +16,6 @@
 			<item value="matrix"/>
 			<item value="ampleV"/>
 			<item value="ampleH"/>
-			<item value="array1"/>
 		</list>
 		<list key="replacehistory">
 			<item value="contadorSupMuertos"/>

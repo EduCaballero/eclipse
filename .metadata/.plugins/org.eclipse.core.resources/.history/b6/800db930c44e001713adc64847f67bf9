@@ -1,0 +1,74 @@
+public class Serie {
+	
+
+	private String titulo;
+	private int temporadas;
+	private int[] captemporadas = new int [temporadas];
+
+	private String genero;
+	private String creador;
+	
+	public Serie(){
+		this.titulo = "Doctor Who";
+		this.temporadas = 3;
+		this.captemporadas = new int[temporadas];
+		for(int i = 0; i<temporadas; i++){
+			this.captemporadas[i]= 21;
+		}
+
+		this.genero = "Aventura";
+		this.creador = "BBC";
+	}
+	public Serie( String titulo, String creador){
+		this.titulo = titulo;
+		this.temporadas = 2;
+		this.captemporadas = new int[temporadas];
+		for(int i = 0; i<temporadas; i++){
+			this.captemporadas[i]= 22;
+		}
+
+		this.genero = "Aventura";
+		this.creador = creador;
+	}
+	public Serie( String titulo, int temporadas, int[] captemporadas, String genero, String creador){
+		this.titulo = titulo;
+		this.temporadas = temporadas;
+		this.captemporadas = new int[temporadas];
+		this.captemporadas= captemporadas;
+
+		this.genero = genero;
+		this.creador = creador;
+	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public int getTemporadas() {
+		return temporadas;
+	}
+	public void setTemporadas(int temporadas) {
+		this.temporadas = temporadas;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	public String getCreador() {
+		return creador;
+	}
+	public int[] getCaptemporadas() {
+		return captemporadas;
+	}
+	public void setCaptemporadas(int[] captemporadas) {
+		this.captemporadas = captemporadas;
+	}
+	
+	public void setCreador(String creador) {
+		this.creador = creador;
+	}
+}

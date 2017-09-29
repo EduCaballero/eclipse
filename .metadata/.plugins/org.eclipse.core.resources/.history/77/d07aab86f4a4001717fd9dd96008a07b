@@ -1,0 +1,12 @@
+
+public class ClaseStringMetodos {
+
+	public static void main(String[] args) {
+		
+		String nombre="Eduardo";
+		
+		System.out.println("Mi nombre es "+nombre);
+		
+	}
+
+}

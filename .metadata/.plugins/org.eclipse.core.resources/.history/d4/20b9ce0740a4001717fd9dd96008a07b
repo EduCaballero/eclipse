@@ -1,0 +1,13 @@
+
+public class CalculosConMath {
+
+	public static void main(String[] args) {
+
+		double raiz=Math.sqrt(9); //método para la raiz cuadrada. siempre debe ser double
+		
+		System.out.println(raiz);
+		
+		
+	}
+
+}
